@@ -27,6 +27,7 @@ const posts = defineCollection({
       draft: z.boolean().optional(),
       tags: z.array(z.string()).default(["others"]),
       ogImage: z.string().optional(),
+      coverAlt: z.string().optional(),
       description: z.string(),
       quickTake: z.array(z.string()).min(1).max(5).optional(),
       quickFilter: z

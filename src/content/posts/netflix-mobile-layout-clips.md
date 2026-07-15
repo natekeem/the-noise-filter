@@ -13,6 +13,7 @@ tags:
   - app-changes
 description: "Netflix has refreshed its mobile navigation and introduced Clips, a vertical discovery feed that is still rolling out by country and device."
 ogImage: "images/netflix-mobile-clips-cover.png"
+coverAlt: "A generic smartphone with abstract vertical entertainment clips arranged in a modern editorial composition."
 quickFilter:
   changed: "Netflix refreshed the mobile layout and added Clips, a vertical feed for discovering shows, movies, and podcasts."
   matters: "New & Hot and Games moved to top shortcuts, while Clips is available only in select countries on supported phones."

@@ -49,6 +49,7 @@ const {
   title,
   description,
   ogImage: initOgImage,
+  coverAlt,
   canonicalURL,
   pubDatetime,
   modDatetime,
@@ -130,7 +131,7 @@ const ogImage = ogImageUrl
           ogImageUrl && (
             <img
               src={getAssetPath(ogImageUrl)}
-              alt="A generic smartphone with abstract vertical entertainment clips arranged in a modern editorial composition."
+              alt={coverAlt ?? "Editorial article cover image."}
               class="border-border mt-7 aspect-video w-full border object-cover"
               width="1680"
               height="945"
