@@ -83,6 +83,103 @@
   @apply decoration-accent/60 hover:text-accent underline decoration-1 underline-offset-4;
 }
 
+.signal-rule {
+  display: block;
+  width: min(10rem, 45%);
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--accent),
+    var(--accent) 56%,
+    var(--accent-soft) 56%,
+    var(--accent-soft) 68%,
+    transparent 68%
+  );
+}
+
+.category-accent {
+  border-top-width: 4px;
+  border-top-color: var(--category-accent, var(--accent));
+}
+
+[data-category="tech-ai"] {
+  --category-accent: var(--category-tech);
+}
+[data-category="money-consumer-changes"] {
+  --category-accent: var(--category-money);
+}
+[data-category="online-safety"] {
+  --category-accent: var(--category-safety);
+}
+[data-category="streaming-entertainment"] {
+  --category-accent: var(--category-streaming);
+}
+[data-category="korea-global-culture"] {
+  --category-accent: var(--category-culture);
+}
+
+.article-header-accent .editorial-label:first-child {
+  color: var(--category-accent, var(--accent));
+}
+
+.quick-filter {
+  border: 1px solid var(--border);
+  background: color-mix(
+    in srgb,
+    var(--surface) 88%,
+    var(--category-accent, var(--accent)) 12%
+  );
+}
+
+.quick-filter-title {
+  padding: 1.25rem 1.25rem 0;
+}
+.quick-filter-title .signal-rule {
+  margin-top: 0.75rem;
+  background: linear-gradient(
+    90deg,
+    var(--category-accent, var(--accent)),
+    var(--category-accent, var(--accent)) 56%,
+    var(--accent-soft) 56%,
+    var(--accent-soft) 68%,
+    transparent 68%
+  );
+}
+.quick-filter-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 1.25rem;
+}
+.quick-filter-grid > div {
+  padding: 0 1.25rem 1.25rem;
+}
+.quick-filter-grid > div + div {
+  border-left: 1px solid var(--border);
+}
+.quick-filter-grid dt {
+  color: var(--foreground);
+  font-family: var(--font-display-stack);
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.quick-filter-grid dd {
+  color: var(--muted-foreground);
+  margin-top: 0.55rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 640px) {
+  .quick-filter-grid {
+    grid-template-columns: 1fr;
+  }
+  .quick-filter-grid > div + div {
+    border-top: 1px solid var(--border);
+    border-left: 0;
+    padding-top: 1.15rem;
+  }
+}
+
 :target {
   scroll-margin-block: 1rem;
 }

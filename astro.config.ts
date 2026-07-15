@@ -21,6 +21,7 @@ import config from "./astro-paper.config";
 
 export default defineConfig({
   site: config.site.url,
+  base: "/the-noise-filter",
   integrations: [
     mdx(),
     sitemap({

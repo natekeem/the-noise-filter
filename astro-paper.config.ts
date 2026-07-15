@@ -2,8 +2,7 @@ import { defineAstroPaperConfig } from "./src/types/config";
 
 export default defineAstroPaperConfig({
   site: {
-    // Reserved placeholder. Replace only after a manual brand/domain decision.
-    url: "https://the-noise-filter.invalid",
+    url: "https://natekeem.github.io",
     title: "The Noise Filter",
     description:
       "What changed, what matters, and what to ignore in the stories regular adults keep seeing online.",

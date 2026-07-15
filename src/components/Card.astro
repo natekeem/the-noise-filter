@@ -26,9 +26,10 @@ const categoryInfo = getCategory(category);
 
 <li
   class:list={[
-    "signal-panel group min-w-0 list-none",
+    "signal-panel category-accent group min-w-0 list-none",
     compact ? "p-4" : "p-5 sm:p-6",
   ]}
+  data-category={category}
 >
   <div class="flex flex-wrap items-center gap-2">
     {

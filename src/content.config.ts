@@ -7,7 +7,7 @@ export const BLOG_PATH = "src/content/posts";
 
 const posts = defineCollection({
   loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: `./${BLOG_PATH}` }),
-  schema: ({ image }) =>
+  schema: () =>
     z.object({
       author: z.string().default(config.site.author),
       pubDatetime: z.date(),
@@ -26,9 +26,16 @@ const posts = defineCollection({
       featured: z.boolean().optional(),
       draft: z.boolean().optional(),
       tags: z.array(z.string()).default(["others"]),
-      ogImage: image().or(z.string()).optional(),
+      ogImage: z.string().optional(),
       description: z.string(),
       quickTake: z.array(z.string()).min(1).max(5).optional(),
+      quickFilter: z
+        .object({
+          changed: z.string(),
+          matters: z.string(),
+          ignore: z.string(),
+        })
+        .optional(),
       updateNote: z.string().optional(),
       canonicalURL: z.string().optional(),
       hideEditPost: z.boolean().optional(),

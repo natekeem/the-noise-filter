@@ -1,6 +1,5 @@
 ---
 import { ClientRouter } from "astro:transitions";
-import { getRelativeLocaleUrl } from "astro:i18n";
 import { resolveDefaultOgImagePath } from "@/utils/resolveDefaultOgImagePath";
 import { getAssetPath } from "@/utils/withBase";
 import config from "@/config";
@@ -22,17 +21,17 @@ const {
   canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
 } = Astro.props;
 
-const socialImageURL = new URL(ogImage, Astro.site ?? Astro.url);
-const rssHref = getRelativeLocaleUrl(
-  Astro.currentLocale ?? config.site.lang,
-  "rss.xml"
+const socialImageURL = new URL(
+  ogImage.startsWith("http") ? ogImage : getAssetPath(ogImage),
+  Astro.site ?? Astro.url
 );
+const rssHref = getAssetPath("rss.xml");
 const websiteStructuredData = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: site.title,
   alternateName: "The Noise Filter",
-  url: new URL("/", Astro.site).href,
+  url: new URL(getAssetPath(""), Astro.site).href,
 };
 ---
 
