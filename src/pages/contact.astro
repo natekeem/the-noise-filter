@@ -1,0 +1,25 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Main from "@/components/Main.astro";
+import Footer from "@/components/Footer.astro";
+import config from "@/config";
+---
+
+<Layout
+  title={`Contact | ${config.site.title}`}
+  description="Contact policy for The Noise Filter."
+>
+  <Header />
+  <Main pageTitle="Contact" eyebrow="Trust" class="app-prose">
+    <p>
+      The Noise Filter is an unpublished MVP. A public correction and contact
+      channel will be added before launch.
+    </p>
+    <p>
+      The MVP does not provide a contact form, comments, newsletter, account
+      system, phone number, or physical mailing address.
+    </p>
+  </Main>
+  <Footer />
+</Layout>

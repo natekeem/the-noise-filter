@@ -1,0 +1,49 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import config from "@/config";
+
+type Props = {
+  pageTitle: string | [string, string];
+  pageDesc?: string;
+  eyebrow?: string;
+  class?: string;
+};
+
+const { pageTitle, pageDesc, eyebrow, class: className } = Astro.props;
+const locale = Astro.currentLocale ?? config.site.lang;
+const backUrl = config.features.showBackButton
+  ? Astro.url.pathname
+  : getRelativeLocaleUrl(locale, "");
+---
+
+<main
+  data-backUrl={backUrl}
+  id="main-content"
+  class:list={["app-layout py-10", className]}
+>
+  <header class="border-border mb-8 border-b pb-7">
+    {eyebrow && <p class="editorial-label">{eyebrow}</p>}
+    <h1 class="font-display mt-2 text-5xl leading-tight font-bold">
+      {pageTitle}
+    </h1>
+    {
+      pageDesc && (
+        <p class="text-muted-foreground mt-4 max-w-3xl text-lg leading-8">
+          {pageDesc}
+        </p>
+      )
+    }
+  </header>
+  <slot />
+</main>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const mainContent: HTMLElement | null =
+      document.querySelector("#main-content");
+    const backUrl = mainContent?.dataset?.backurl;
+    if (backUrl) {
+      sessionStorage.setItem("backUrl", backUrl);
+    }
+  });
+</script>

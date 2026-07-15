@@ -1,0 +1,82 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { categories } from "@/data/categories";
+import config from "@/config";
+
+type Props = {
+  noMarginTop?: boolean;
+} & HTMLAttributes<"footer">;
+
+const { noMarginTop = false, class: className, ...attrs } = Astro.props;
+const currentYear = new Date().getFullYear();
+const locale = Astro.currentLocale ?? config.site.lang;
+---
+
+<footer
+  class:list={[
+    "border-border bg-surface mt-16 border-t",
+    { "mt-auto": !noMarginTop },
+    className,
+  ]}
+  {...attrs}
+>
+  <div class="app-layout py-10">
+    <div class="grid gap-8 lg:grid-cols-[1.3fr_1fr_1fr]">
+      <div>
+        <p class="font-display text-3xl font-bold">The Noise Filter</p>
+        <p class="text-muted-foreground mt-3 max-w-md">
+          Hot stories, filtered for regular adults. Independent explainers, not
+          first-hand reporting.
+        </p>
+      </div>
+      <nav aria-label="Footer categories">
+        <p class="editorial-label mb-3">Sections</p>
+        <div class="grid gap-2">
+          {
+            categories.map(category => (
+              <a
+                class="signal-link w-fit text-sm"
+                href={getRelativeLocaleUrl(
+                  locale,
+                  `categories/${category.slug}`
+                )}
+              >
+                {category.name}
+              </a>
+            ))
+          }
+        </div>
+      </nav>
+      <nav aria-label="Footer trust links">
+        <p class="editorial-label mb-3">Trust</p>
+        <div class="grid gap-2">
+          <a
+            class="signal-link w-fit text-sm"
+            href={getRelativeLocaleUrl(locale, "about")}>About</a
+          >
+          <a
+            class="signal-link w-fit text-sm"
+            href={getRelativeLocaleUrl(locale, "contact")}>Contact</a
+          >
+          <a
+            class="signal-link w-fit text-sm"
+            href={getRelativeLocaleUrl(locale, "privacy")}>Privacy</a
+          >
+          <a
+            class="signal-link w-fit text-sm"
+            href={getRelativeLocaleUrl(locale, "disclosure")}>Disclosure</a
+          >
+          <a
+            class="signal-link w-fit text-sm"
+            href={getRelativeLocaleUrl(locale, "rss.xml")}>RSS</a
+          >
+        </div>
+      </nav>
+    </div>
+    <p class="text-muted-foreground border-border mt-8 border-t pt-5 text-sm">
+      Copyright © {currentYear} The Noise Filter. No analytics, ads, affiliate links,
+      comments, or newsletter are enabled in this MVP.
+    </p>
+  </div>
+</footer>

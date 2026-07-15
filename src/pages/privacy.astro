@@ -1,0 +1,26 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Main from "@/components/Main.astro";
+import Footer from "@/components/Footer.astro";
+import config from "@/config";
+---
+
+<Layout
+  title={`Privacy | ${config.site.title}`}
+  description="Privacy notes for The Noise Filter."
+>
+  <Header />
+  <Main pageTitle="Privacy" eyebrow="Trust" class="app-prose">
+    <p>The Noise Filter is currently an unpublished static-site MVP.</p>
+    <p>
+      At this stage, the site does not have user accounts, comments, analytics,
+      ads, affiliate links, contact forms, or newsletter forms.
+    </p>
+    <p>
+      Hosting and its related privacy disclosures will be reviewed before any
+      public launch.
+    </p>
+  </Main>
+  <Footer />
+</Layout>

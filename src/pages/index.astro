@@ -1,0 +1,210 @@
+---
+import { getCollection } from "astro:content";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Card from "@/components/Card.astro";
+import { getSortedPosts } from "@/utils/getSortedPosts";
+import { categories } from "@/data/categories";
+import config from "@/config";
+
+const locale = Astro.currentLocale ?? config.site.lang;
+const posts = getSortedPosts(await getCollection("posts"));
+const [leadPost, ...secondaryPosts] = posts;
+const categoryGroups = categories.map(category => ({
+  ...category,
+  posts: posts.filter(post => post.data.category === category.slug).slice(0, 3),
+}));
+---
+
+<Layout>
+  <Header />
+  <main id="main-content" data-layout="index" class="app-layout">
+    <section
+      class="border-border grid gap-8 border-b py-10 lg:grid-cols-[1.25fr_0.75fr] lg:py-14"
+    >
+      <div class="min-w-0">
+        <p class="editorial-label">Signal & Noise Editorial</p>
+        <h1
+          class="font-display mt-4 max-w-4xl text-4xl leading-[0.98] font-bold tracking-normal sm:text-6xl lg:text-7xl"
+        >
+          <span class="block sm:inline">Hot stories,</span>
+          <span class="block sm:inline"> filtered for</span>
+          <span class="block sm:inline"> regular adults.</span>
+        </h1>
+        <p
+          class="text-muted-foreground mt-6 max-w-full text-lg leading-8 sm:max-w-2xl sm:text-xl"
+        >
+          The Noise Filter explains platform changes, consumer shifts, online
+          safety updates, and culture stories in plain English: what changed,
+          what matters, and what to ignore.
+        </p>
+      </div>
+      <aside class="signal-panel self-end p-5">
+        <p class="editorial-label">MVP Status</p>
+        <p class="mt-3 text-lg font-semibold">Pilot drafts are under review.</p>
+        <p class="text-muted-foreground mt-2 leading-7">
+          Nothing is published yet. Public pages show only approved content, and
+          this build has no ads, analytics, comments, newsletter, or affiliate
+          links.
+        </p>
+      </aside>
+    </section>
+
+    <nav class="border-border border-b py-4" aria-label="Editorial sections">
+      <div class="flex gap-3 overflow-x-auto pb-1">
+        {
+          categories.map(category => (
+            <a
+              href={getRelativeLocaleUrl(locale, `categories/${category.slug}`)}
+              class="border-border bg-surface hover:border-accent border px-4 py-2 text-sm font-semibold whitespace-nowrap"
+            >
+              {category.name}
+            </a>
+          ))
+        }
+      </div>
+    </nav>
+
+    <section class="grid gap-6 py-10 lg:grid-cols-[1.4fr_1fr]">
+      <div>
+        <div class="mb-4 flex items-end justify-between gap-4">
+          <div>
+            <p class="editorial-label">Lead Story</p>
+            <h2 class="font-display mt-2 text-2xl font-bold sm:text-3xl">
+              The strongest signal today
+            </h2>
+          </div>
+        </div>
+        {
+          leadPost ? (
+            <ul>
+              <Card {...leadPost} />
+            </ul>
+          ) : (
+            <div class="signal-panel p-6 sm:p-8">
+              <p class="editorial-label">No public lead yet</p>
+              <h3 class="font-display mt-3 text-2xl font-bold sm:text-3xl">
+                The front page is waiting for approved reporting.
+              </h3>
+              <p class="text-muted-foreground mt-4 max-w-2xl leading-8">
+                Drafts stay out of production routes, feeds, sitemaps, and
+                search until a human approval decision is recorded.
+              </p>
+            </div>
+          )
+        }
+      </div>
+
+      <div>
+        <p class="editorial-label mb-4">Secondary Reads</p>
+        {
+          secondaryPosts.length > 0 ? (
+            <ul class="grid gap-4">
+              {secondaryPosts.slice(0, 2).map(post => (
+                <Card {...post} compact />
+              ))}
+            </ul>
+          ) : (
+            <div class="border-border bg-surface border p-5">
+              <p class="text-muted-foreground leading-7">
+                Secondary story slots will appear after multiple posts clear
+                source review.
+              </p>
+            </div>
+          )
+        }
+      </div>
+    </section>
+
+    <section class="border-border border-t py-10">
+      <div class="mb-6 flex items-end justify-between gap-4">
+        <div>
+          <p class="editorial-label">Latest Stories</p>
+          <h2 class="font-display mt-2 text-2xl font-bold sm:text-3xl">
+            Recently cleared for readers
+          </h2>
+        </div>
+        <a
+          class="signal-link hidden text-sm font-semibold sm:inline-flex"
+          href={getRelativeLocaleUrl(locale, "posts")}
+        >
+          All stories <IconArrowRight class="ms-1 size-4" />
+        </a>
+      </div>
+      {
+        posts.length > 0 ? (
+          <ul class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {posts.slice(0, 6).map(post => (
+              <Card {...post} compact />
+            ))}
+          </ul>
+        ) : (
+          <div class="grid gap-4 md:grid-cols-3">
+            {[
+              "Confirmed facts",
+              "Plain-English impact",
+              "What to watch next",
+            ].map(label => (
+              <div class="border-border bg-surface border p-5">
+                <p class="editorial-label">{label}</p>
+                <p class="text-muted-foreground mt-3 leading-7">
+                  This space stays quiet until a draft passes source review and
+                  human approval.
+                </p>
+              </div>
+            ))}
+          </div>
+        )
+      }
+    </section>
+
+    <section class="border-border border-t py-10">
+      <p class="editorial-label">Sections</p>
+      <div class="mt-5 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        {
+          categoryGroups.map(category => (
+            <article class="signal-panel p-5">
+              <h2 class="font-display text-2xl font-bold">{category.name}</h2>
+              <p class="text-muted-foreground mt-2 leading-7">
+                {category.description}
+              </p>
+              {category.posts.length > 0 ? (
+                <ul class="mt-4 grid gap-3">
+                  {category.posts.map(post => (
+                    <Card {...post} compact />
+                  ))}
+                </ul>
+              ) : (
+                <p class="border-border text-muted-foreground mt-5 border-t pt-4 text-sm leading-6">
+                  No public stories in this section yet.
+                </p>
+              )}
+              <a
+                class="signal-link mt-5 inline-flex text-sm font-semibold"
+                href={getRelativeLocaleUrl(
+                  locale,
+                  `categories/${category.slug}`
+                )}
+              >
+                Open section
+              </a>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    sessionStorage.setItem(
+      "backUrl",
+      import.meta.env.BASE_URL.replace(/\/?$/, "/")
+    );
+  });
+</script>
