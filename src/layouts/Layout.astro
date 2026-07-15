@@ -21,10 +21,11 @@ const {
   canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
 } = Astro.props;
 
-const socialImageURL = new URL(
-  ogImage.startsWith("http") ? ogImage : getAssetPath(ogImage),
-  Astro.site ?? Astro.url
-);
+const socialImagePath =
+  ogImage.startsWith("http") || ogImage.startsWith(import.meta.env.BASE_URL)
+    ? ogImage
+    : getAssetPath(ogImage);
+const socialImageURL = new URL(socialImagePath, Astro.site ?? Astro.url);
 const rssHref = getAssetPath("rss.xml");
 const websiteStructuredData = {
   "@context": "https://schema.org",
