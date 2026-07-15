@@ -77,4 +77,4 @@ Watch Netflix's Help Center for changes to country availability and supported de
 - [Netflix APAC product showcase, June 10, 2026](https://about.netflix.com/en/news/apac-product-innovation-showcase-2026)
 - [9to5Mac overview of the launch interface, April 30, 2026](https://9to5mac.com/2026/04/30/netflix-launches-iphone-app-redesign-heres-whats-new/)
 
-_Updated July 15, 2026. Feature availability can change; Netflix’s Help Center is the best place to check the current device and country guidance._
+_Updated July 15, 2026. Feature availability can change; Netflix's Help Center is the best place to check the current device and country guidance._
