@@ -2,6 +2,7 @@
 author: "The Noise Filter"
 pubDatetime: 2026-07-16T00:07:03+09:00
 modDatetime: 2026-07-16T00:07:03+09:00
+timezone: "Asia/Seoul"
 title: "Android 17 Adds New Security Protections—But Your Phone May Not Get All of Them"
 category: "online-safety"
 contentType: "Explainer"
