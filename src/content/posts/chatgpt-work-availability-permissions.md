@@ -22,7 +22,7 @@ updateNote: "Draft reviewed against OpenAI's announcement and Help Center on Jul
 
 You open ChatGPT and find a new **Work** option beside the familiar chat experience. Or you hear that Work can handle files and apps, then look on your phone and cannot find it at all. Both situations are plausible during this rollout.
 
-OpenAI launched ChatGPT Work on July 9 for longer, multi-step assignments. The useful question is not whether it is a more impressive chatbot. It is where you can use it, what information you choose to give it, and which actions still need your attention.
+OpenAI launched ChatGPT Work on July 9 for longer, multi-step assignments. Set aside the bigger-chatbot pitch and start with three practical checks: where you can use it, what information you choose to give it, and which actions still need your attention.
 
 ## Start with the screen you are using
 
@@ -50,7 +50,7 @@ Connecting an app does not hand ChatGPT a universal key. The app connection, you
 
 The default **Important actions** setting allows reading from apps automatically but asks before actions that may have a meaningful outside effect, expose sensitive information, or be hard to undo. OpenAI lists examples such as sending a message, deleting content, completing a purchase, moving a cloud file, changing sharing access, or disclosing sensitive information.
 
-That is not the same as “every change gets an approval card.” OpenAI says lower-risk changes may proceed without asking under the default setting, while some especially risky actions may be blocked. People who want a prompt before any change can review the **Ask permission** option under Settings and Apps. Managed workspaces may apply administrator rules instead.
+That is not the same as “every change gets an approval card.” OpenAI says lower-risk changes may proceed without asking under the default setting, while some especially risky actions may be blocked. People who want a prompt before any change can open **Settings > Apps**, find **Ask permission**, and select **Any changes**. Managed workspaces may apply administrator rules instead.
 
 The practical habit is simple: before assigning a real task, open the connected app's details and check what it can read or change. Then review the approval card itself, not just the name of the app.
 
@@ -75,7 +75,7 @@ These rules come from the documentation for connected apps and apps with sync; t
 
 What can be ignored for now? You do not need to connect every service, schedule recurring work, or replace ordinary chat. The launch examples show what OpenAI wants Work to become; they do not establish that every app, workflow, or account has the same reach today.
 
-## What to watch next
+## Two rollout details worth tracking
 
 Watch the Help Center for two practical changes: whether the web/mobile rollout language becomes a stable plan table, and whether cloud and desktop Work conversations begin moving between surfaces. Those details will matter more to most users than another list of ambitious tasks the agent might perform.
 
