@@ -1,12 +1,13 @@
 ---
 author: "The Noise Filter"
-pubDatetime: 2026-07-17T00:00:00+09:00
+pubDatetime: 2026-07-17T09:30:00+09:00
+modDatetime: 2026-07-17T09:30:00+09:00
 timezone: "Asia/Seoul"
 title: "ChatGPT Work Is Here: Who Gets It, What It Can Access, and What to Check"
 category: "tech-ai"
 contentType: "Explainer"
 featured: false
-draft: true
+draft: false
 tags:
   - tech-ai
   - chatgpt
@@ -19,7 +20,7 @@ quickFilter:
   changed: "OpenAI added Work, a mode for longer tasks that can use files, connected apps, and supported desktop tools."
   matters: "Desktop and cloud access differ, and app approvals do not mean ChatGPT automatically gains access to everything."
   ignore: "You do not need to connect every app, move every task into Work, or assume a missing button means your account is broken."
-updateNote: "Draft reviewed against OpenAI's announcement and Help Center on July 17, 2026. Availability and permission controls may change during rollout."
+updateNote: "Reviewed against OpenAI's announcement, release notes, and current Help Center guidance on July 17, 2026. Availability and permission controls may change during rollout."
 ---
 
 You open ChatGPT and find a new **Work** option beside the familiar chat experience. Or you hear that Work can handle files and apps, then look on your phone and cannot find it at all. Both situations are plausible during this rollout.
@@ -54,7 +55,7 @@ The default **Important actions** setting allows reading from apps automatically
 
 That is not the same as “every change gets an approval card.” OpenAI says lower-risk changes may proceed without asking under the default setting, while some especially risky actions may be blocked. People who want a prompt before any change can open **Settings > Apps**, find **Ask permission**, and select **Any changes**. Managed workspaces may apply administrator rules instead.
 
-The practical habit is simple: before assigning a real task, open the connected app's details and check what it can read or change. Then review the approval card itself, not just the name of the app.
+The practical habit is simple: before assigning a real task, open the Plugins Directory, select the connected app, and check what it can read or change. Then review the approval card itself, not just the name of the app.
 
 ## The privacy question has more than one setting
 
@@ -88,6 +89,5 @@ Watch the Help Center for two practical changes: whether the web/mobile rollout 
 - [OpenAI Help Center: ChatGPT release notes](https://help.openai.com/en/articles/6825453-chatgpt-release-notes)
 - [OpenAI Help Center: Apps in ChatGPT](https://help.openai.com/en/articles/11487775)
 - [OpenAI Help Center: ChatGPT apps with sync](https://help.openai.com/en/articles/10847137)
-- [TechRadar Pro launch overview](https://www.techradar.com/pro/openai-unveils-chatgpt-work-an-ai-tool-capable-of-handling-workloads-across-finance-data-analytics-engineering-and-more)
 
-_Draft reviewed July 17, 2026. It is not approved for publication. Availability, app controls, and cross-device behavior should be checked again before any publish decision._
+_Reviewed July 17, 2026. Availability, app controls, plugin terminology, and cross-device behavior may change as the rollout develops._

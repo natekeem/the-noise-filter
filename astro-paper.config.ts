@@ -2,7 +2,7 @@ import { defineAstroPaperConfig } from "./src/types/config";
 
 export default defineAstroPaperConfig({
   site: {
-    url: "https://natekeem.github.io",
+    url: "https://natekeem.com",
     title: "The Noise Filter",
     description:
       "What changed, what matters, and what to ignore in the stories regular adults keep seeing online.",
