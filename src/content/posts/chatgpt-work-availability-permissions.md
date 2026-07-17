@@ -13,6 +13,8 @@ tags:
   - ai-assistants
   - privacy-controls
 description: "ChatGPT Work has different access rules on desktop, web, and mobile. Here is what it can use, when permissions matter, and what to check first."
+ogImage: "images/chatgpt-work-availability-permissions-cover.png"
+coverAlt: "A laptop and abstract work surfaces connected through a small lime control slider on a modern editorial desk."
 quickFilter:
   changed: "OpenAI added Work, a mode for longer tasks that can use files, connected apps, and supported desktop tools."
   matters: "Desktop and cloud access differ, and app approvals do not mean ChatGPT automatically gains access to everything."
