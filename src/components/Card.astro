@@ -10,11 +10,13 @@ import config from "@/config";
 type Props = {
   variant?: "h2" | "h3";
   compact?: boolean;
+  fill?: boolean;
 } & CollectionEntry<"posts">;
 
 const {
   variant: Heading = "h2",
   compact = false,
+  fill = false,
   id,
   data,
   filePath,
@@ -28,6 +30,7 @@ const categoryInfo = getCategory(category);
   class:list={[
     "signal-panel category-accent group min-w-0 list-none",
     compact ? "p-4" : "p-5 sm:p-6",
+    fill && "flex h-full w-full flex-col",
   ]}
   data-category={category}
 >
@@ -57,7 +60,12 @@ const categoryInfo = getCategory(category);
     </Heading>
   </a>
   <p class="text-muted-foreground mt-3 text-base leading-7">{description}</p>
-  <div class="text-muted-foreground mt-4 text-sm">
+  <div
+    class:list={[
+      "text-muted-foreground text-sm",
+      fill ? "mt-auto pt-4" : "mt-4",
+    ]}
+  >
     <Datetime {...props} />
   </div>
 </li>

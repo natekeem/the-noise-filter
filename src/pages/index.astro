@@ -72,19 +72,12 @@ const categoryGroups = categories.map(category => ({
     </nav>
 
     <section class="grid gap-6 py-10 lg:grid-cols-[1.4fr_1fr]">
-      <div>
-        <div class="mb-4 flex items-end justify-between gap-4">
-          <div>
-            <p class="editorial-label">Lead Story</p>
-            <h2 class="font-display mt-2 text-2xl font-bold sm:text-3xl">
-              The strongest signal today
-            </h2>
-          </div>
-        </div>
+      <div class="flex min-w-0 flex-col">
+        <p class="editorial-label mb-4">Lead Story</p>
         {
           leadPost ? (
-            <ul>
-              <Card {...leadPost} />
+            <ul class="flex flex-1">
+              <Card {...leadPost} fill />
             </ul>
           ) : (
             <div class="signal-panel p-6 sm:p-8">
