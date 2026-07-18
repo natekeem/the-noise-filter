@@ -1,13 +1,13 @@
 ---
 author: "The Noise Filter"
-pubDatetime: 2026-07-19T09:00:00+09:00
-modDatetime: 2026-07-19T09:00:00+09:00
+pubDatetime: 2026-07-19T08:00:00+09:00
+modDatetime: 2026-07-19T08:00:00+09:00
 timezone: "Asia/Seoul"
 title: "Siri AI Is Coming, but Not to Everyone: Devices, Data Access, and Rollout Limits"
 category: "tech-ai"
 contentType: "Explainer"
 featured: false
-draft: true
+draft: false
 tags:
   - tech-ai
   - siri-ai
@@ -49,7 +49,7 @@ There is a second hardware boundary inside that list. Apple says the most advanc
 
 ## Region and language rules can override the device list
 
-Apple says the initial consumer beta will be for supported devices set to English. Its general Apple Intelligence support page lists many more supported languages, but those broader language listings should not be read as a Siri AI launch schedule. Apple has not said in the sources reviewed for this article when Siri AI will support Korean or every other Apple Intelligence language.
+For the initial consumer beta, Apple specifies supported devices set to English. Its general Apple Intelligence support page lists many more supported languages, but those broader language listings should not be read as a Siri AI launch schedule. Apple has not said in the sources reviewed for this article when Siri AI will support Korean or every other Apple Intelligence language.
 
 The European Union has a separate rollout. Apple says Siri AI will initially be available there on Mac and Apple Vision Pro, but not on iPhone, iPad, or Apple Watch. The company attributes the delay to requirements under the Digital Markets Act and has not provided a date for the excluded platforms. Apple also says EU developers cannot test the affected Siri AI features on iOS, iPadOS, or watchOS during this period.
 
@@ -79,7 +79,7 @@ Onscreen awareness has a similar boundary. Apple says Siri can understand pixels
 
 Apple describes a hybrid system. Some requests use models on the device. More demanding requests may be sent to server models running in Private Cloud Compute, or to another model when the user chooses an offered integration. The system decides which model and tools are needed for a request.
 
-Apple says the personal-context orchestrator searches the Spotlight index and App Toolbox on the device. It also says Private Cloud Compute uses stateless computation: data sent for a request is not stored or made accessible to Apple, and the result is returned to the device. Those are Apple’s security claims, supported by its published architecture and verification program; they should not be turned into an independent promise that every Siri interaction has no privacy risk.
+According to Apple’s technical explanation, the personal-context orchestrator searches the Spotlight index and App Toolbox on the device. The company also says Private Cloud Compute uses stateless computation: data sent for a request is not stored or made accessible to Apple, and the result is returned to the device. Those are Apple’s security claims, supported by its published architecture and verification program; they should not be turned into an independent promise that every Siri interaction has no privacy risk.
 
 The infrastructure is also evolving. In 2026 Apple expanded Private Cloud Compute capacity to include infrastructure using Google Cloud and NVIDIA GPUs while saying the same privacy protections and verifiable software requirements apply. That change does not mean Google receives ordinary access to a person’s Siri data, according to Apple, but it is a reminder to evaluate the documented processing design rather than relying on the word “private” alone.
 
