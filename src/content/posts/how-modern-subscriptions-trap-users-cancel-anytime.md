@@ -1,7 +1,7 @@
 ---
 author: "The Noise Filter"
-pubDatetime: 2026-10-14T09:00:00+09:00
-modDatetime: 2026-10-14T09:00:00+09:00
+pubDatetime: 2026-10-14T08:00:00+09:00
+modDatetime: 2026-10-14T08:00:00+09:00
 timezone: "Asia/Seoul"
 title: "The \"Cancel Anytime\" Lie: How Modern Subscriptions Quietly Trap Everyday Users"
 category: "money-consumer-changes"
