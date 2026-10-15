@@ -26,7 +26,6 @@ type Props = {
 };
 
 const { category, posts } = Astro.props;
-const [leadPost, ...otherPosts] = posts;
 ---
 
 <Layout
@@ -34,37 +33,45 @@ const [leadPost, ...otherPosts] = posts;
   description={category.description}
 >
   <Header />
-  <main id="main-content" class="app-layout py-10">
-    <p class="editorial-label">Section</p>
-    <h1 class="font-display mt-3 text-5xl leading-tight font-bold">
-      {category.name}
-    </h1>
-    <p class="text-muted-foreground mt-4 max-w-2xl text-lg leading-8">
-      {category.description}
-    </p>
+  <main
+    id="main-content"
+    class="app-layout py-10 sm:py-14"
+    data-category={category.slug}
+  >
+    <header class="border-border border-b pb-8">
+      <div class="flex items-center gap-2">
+        <span class="category-dot"></span>
+        <p class="category-label">{category.name}</p>
+      </div>
+      <h1
+        class="font-display text-foreground mt-3 text-4xl font-bold tracking-tight sm:text-5xl"
+      >
+        {category.name}
+      </h1>
+      <p class="text-muted-foreground mt-4 max-w-2xl text-lg leading-relaxed">
+        {category.description}
+      </p>
+    </header>
 
-    <section class="mt-9">
+    <section class="mt-8">
       {
-        leadPost ? (
-          <div class="grid gap-6 lg:grid-cols-[1.2fr_1fr]">
-            <ul>
-              <Card {...leadPost} />
-            </ul>
-            <ul class="grid gap-4">
-              {otherPosts.slice(0, 4).map(post => (
-                <Card {...post} compact />
-              ))}
-            </ul>
-          </div>
+        posts.length > 0 ? (
+          <ul class="divide-border divide-y">
+            {posts.map(post => (
+              <Card {...post} layout="row" variant="h2" />
+            ))}
+          </ul>
         ) : (
-          <div class="signal-panel p-6 sm:p-8">
-            <p class="editorial-label">No public stories yet</p>
-            <h2 class="font-display mt-3 text-3xl font-bold">
-              This section is ready before the newsroom voice is.
+          <div class="signal-panel p-8 text-center sm:p-12">
+            <p class="editorial-label text-muted-foreground">
+              No public stories yet
+            </p>
+            <h2 class="font-display text-foreground mt-3 text-2xl font-bold">
+              This channel is quiet right now.
             </h2>
-            <p class="text-muted-foreground mt-4 max-w-2xl leading-8">
-              The MVP keeps draft work private. Stories appear here only after
-              source checks and explicit human approval.
+            <p class="text-muted-foreground mx-auto mt-3 max-w-lg text-base leading-relaxed">
+              Stories only appear here once source checks and editorial
+              verification are complete.
             </p>
           </div>
         )

@@ -19,16 +19,18 @@ const backUrl = config.features.showBackButton
 <main
   data-backUrl={backUrl}
   id="main-content"
-  class:list={["app-layout py-10", className]}
+  class:list={["app-layout py-10 sm:py-14", className]}
 >
-  <header class="border-border mb-8 border-b pb-7">
-    {eyebrow && <p class="editorial-label">{eyebrow}</p>}
-    <h1 class="font-display mt-2 text-5xl leading-tight font-bold">
+  <header class="border-border mb-10 border-b pb-8">
+    {eyebrow && <p class="editorial-label text-muted-foreground">{eyebrow}</p>}
+    <h1
+      class="font-display text-foreground mt-3 text-4xl font-bold tracking-tight sm:text-5xl"
+    >
       {pageTitle}
     </h1>
     {
       pageDesc && (
-        <p class="text-muted-foreground mt-4 max-w-3xl text-lg leading-8">
+        <p class="text-muted-foreground mt-4 max-w-2xl text-lg leading-relaxed">
           {pageDesc}
         </p>
       )

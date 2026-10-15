@@ -13,7 +13,7 @@ import config from "@/config";
 
 export const getStaticPaths = (async ({ paginate }) => {
   const posts = await getCollection("posts", ({ data }) => !data.draft);
-  return paginate(getSortedPosts(posts), { pageSize: config.posts.perPage });
+  return paginate(getSortedPosts(posts), { pageSize: 6 });
 }) satisfies GetStaticPaths;
 
 const { page } = Astro.props;
@@ -27,11 +27,11 @@ const t = useTranslations(locale);
 
   <Main
     pageTitle="Latest stories"
-    pageDesc="Approved articles from The Noise Filter."
-    eyebrow="Archive"
+    pageDesc="All source-reviewed explainers published on The Noise Filter."
+    eyebrow="Chronological Archive"
   >
-    <ul class="grid gap-5 md:grid-cols-2">
-      {page.data.map(data => <Card {...data} />)}
+    <ul class="divide-border divide-y">
+      {page.data.map(data => <Card {...data} layout="row" variant="h2" />)}
     </ul>
   </Main>
 

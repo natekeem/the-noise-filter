@@ -14,58 +14,83 @@ const posts = getSortedPosts(await getCollection("posts"));
 ---
 
 <Layout
-  title={`Sections | ${config.site.title}`}
-  description="The Noise Filter editorial sections."
+  title={`Topics | ${config.site.title}`}
+  description="Explore The Noise Filter by topic."
 >
   <Header />
-  <main id="main-content" class="app-layout py-10">
-    <p class="editorial-label">Editorial Sections</p>
-    <h1 class="font-display mt-3 text-5xl leading-tight font-bold">
-      Browse by signal.
-    </h1>
-    <p class="text-muted-foreground mt-4 max-w-2xl text-lg leading-8">
-      Categories are the primary way The Noise Filter organizes stories. Tags
-      stay secondary and practical.
-    </p>
+  <main id="main-content" class="app-layout py-10 sm:py-14">
+    <header class="border-border border-b pb-8">
+      <p class="editorial-label text-muted-foreground">Topics</p>
+      <h1
+        class="font-display text-foreground mt-3 text-4xl font-bold tracking-tight sm:text-5xl"
+      >
+        All Channels
+      </h1>
+      <p class="text-muted-foreground mt-4 max-w-2xl text-lg leading-relaxed">
+        Browse verified explainers across technology, consumer policy, online
+        security, streaming, and culture.
+      </p>
+    </header>
 
-    <div class="mt-8 grid gap-5 md:grid-cols-2">
+    <div class="mt-12 space-y-16">
       {
         categories.map(category => {
-          const categoryPosts = posts
-            .filter(post => post.data.category === category.slug)
-            .slice(0, 2);
+          const categoryPosts = posts.filter(
+            post => post.data.category === category.slug
+          );
           return (
-            <section class="signal-panel p-5 sm:p-6">
-              <p class="editorial-label">
-                {categoryPosts.length} public stories
-              </p>
-              <h2 class="font-display mt-2 text-3xl font-bold">
-                {category.name}
-              </h2>
-              <p class="text-muted-foreground mt-3 leading-7">
-                {category.description}
-              </p>
+            <section
+              data-category={category.slug}
+              class="border-border border-b pb-12 last:border-b-0"
+            >
+              <div class="mb-6 flex flex-wrap items-baseline justify-between gap-4">
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span class="category-dot" />
+                    <a
+                      href={getRelativeLocaleUrl(
+                        locale,
+                        `categories/${category.slug}`
+                      )}
+                      class="category-label hover:underline"
+                    >
+                      {category.name}
+                    </a>
+                  </div>
+                  <h2 class="font-display text-foreground mt-2 text-2xl font-bold">
+                    {category.name}
+                  </h2>
+                  <p class="text-muted-foreground mt-1 text-sm">
+                    {category.description}
+                  </p>
+                </div>
+                <a
+                  href={getRelativeLocaleUrl(
+                    locale,
+                    `categories/${category.slug}`
+                  )}
+                  class="signal-link text-sm font-medium"
+                >
+                  View all ({categoryPosts.length}) &rarr;
+                </a>
+              </div>
+
               {categoryPosts.length > 0 ? (
-                <ul class="mt-5 grid gap-4">
-                  {categoryPosts.map(post => (
-                    <Card {...post} compact />
+                <ul class="divide-border divide-y">
+                  {categoryPosts.slice(0, 3).map(post => (
+                    <Card
+                      {...post}
+                      layout="row"
+                      variant="h3"
+                      hideDescription={false}
+                    />
                   ))}
                 </ul>
               ) : (
-                <p class="border-border text-muted-foreground mt-5 border-t pt-4 leading-7">
-                  This section is intentionally empty until a draft clears
-                  review.
+                <p class="text-muted-foreground py-4 text-sm italic">
+                  No public stories published in this channel yet.
                 </p>
               )}
-              <a
-                class="signal-link mt-5 inline-flex text-sm font-semibold"
-                href={getRelativeLocaleUrl(
-                  locale,
-                  `categories/${category.slug}`
-                )}
-              >
-                Open {category.name}
-              </a>
             </section>
           );
         })

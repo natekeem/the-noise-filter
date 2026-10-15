@@ -3,12 +3,13 @@ import { type CollectionEntry, getCollection, render } from "astro:content";
 import PostLayout from "@/layouts/PostLayout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
-import Datetime from "@/components/Datetime.astro";
 import Card from "@/components/Card.astro";
 import { getPostSlug, getPostUrl } from "@/utils/getPostPaths";
 import { getCategory } from "@/data/categories";
 import { toTransitionName } from "@/utils/toTransitionName";
 import { getAssetPath } from "@/utils/withBase";
+import { getReadingTime } from "@/utils/getReadingTime";
+import { formatPostDate } from "@/utils/formatPostDate";
 import config from "@/config";
 
 export async function getStaticPaths() {
@@ -53,7 +54,6 @@ const {
   canonicalURL,
   pubDatetime,
   modDatetime,
-  timezone,
   category,
   contentType,
   quickTake = [],
@@ -64,6 +64,8 @@ const {
 
 const categoryInfo = getCategory(category);
 const { Content } = await render(post);
+const minutes = getReadingTime(post.body);
+const date = formatPostDate(post.data);
 
 let ogImageUrl = initOgImage;
 
@@ -93,25 +95,34 @@ const ogImage = ogImageUrl
 >
   <Header />
 
-  <main id="main-content" class="app-layout py-8" data-pagefind-body>
+  <main id="main-content" class="app-layout py-10 sm:py-14" data-pagefind-body>
     <article class="mx-auto max-w-[760px]" data-category={category}>
-      <header class="border-border article-header-accent border-b pb-8">
+      <!-- Article Header -->
+      <header class="border-border border-b pb-8">
         <div class="flex flex-wrap items-center gap-2">
           {
             categoryInfo && (
-              <span class="editorial-label">{categoryInfo.name}</span>
+              <a
+                href={`/the-noise-filter/categories/${categoryInfo.slug}`}
+                class="category-label"
+              >
+                {categoryInfo.name}
+              </a>
             )
           }
-          <span class="text-muted-foreground text-xs" aria-hidden="true">/</span
+          <span class="text-muted-foreground text-xs" aria-hidden="true"
+            >&bull;</span
           >
           <span class="editorial-label">{contentType}</span>
           {
             draft && (
               <>
                 <span class="text-muted-foreground text-xs" aria-hidden="true">
-                  /
+                  &bull;
                 </span>
-                <span class="editorial-label">Draft Preview</span>
+                <span class="editorial-label text-amber-600 dark:text-amber-400">
+                  Draft Preview
+                </span>
               </>
             )
           }
@@ -119,63 +130,86 @@ const ogImage = ogImageUrl
 
         <h1
           style={{ viewTransitionName: toTransitionName(title) }}
-          class="font-display mt-5 text-4xl leading-tight font-bold break-words sm:text-5xl"
+          class="font-display text-foreground mt-4 text-3xl leading-tight font-bold tracking-tight sm:text-4xl lg:text-5xl"
         >
           {title}
         </h1>
-        <p class="text-muted-foreground mt-5 text-xl leading-8">
+        <p
+          class="text-muted-foreground mt-4 text-lg leading-relaxed sm:text-xl"
+        >
           {description}
         </p>
 
+        <!-- Meta Line -->
+        <p class="post-meta mt-5 text-sm">
+          <span class="text-foreground font-medium"
+            >By {config.site.author}</span
+          >
+          <time datetime={date.iso}>{date.label}</time>
+          <span>{minutes} min read</span>
+          {date.isUpdated && <span class="text-xs italic">(Updated)</span>}
+        </p>
+
+        <!-- Cover Image -->
         {
           ogImageUrl && (
-            <img
-              src={getAssetPath(ogImageUrl)}
-              alt={coverAlt ?? "Editorial article cover image."}
-              class="border-border mt-7 aspect-video w-full border object-cover"
-              width="1680"
-              height="945"
-              loading="eager"
-            />
+            <div class="media-frame mt-8 aspect-video w-full">
+              <img
+                src={getAssetPath(ogImageUrl)}
+                alt={coverAlt ?? "Article cover image"}
+                class="h-full w-full object-cover"
+                width="1680"
+                height="945"
+                loading="eager"
+              />
+            </div>
           )
         }
-
-        <div class="text-muted-foreground mt-5 text-sm">
-          <Datetime {pubDatetime} {modDatetime} {timezone} size="lg" />
-        </div>
       </header>
 
+      <!-- Quick Filter Component -->
       {
         quickFilter ? (
-          <aside class="quick-filter my-8" aria-label="Quick Filter">
-            <div class="quick-filter-title">
-              <p class="editorial-label">Quick Filter</p>
-              <span class="signal-rule" aria-hidden="true" />
-            </div>
-            <dl class="quick-filter-grid">
+          <aside
+            class="quick-filter quick-filter--stack my-10"
+            aria-label="Quick Filter summary"
+          >
+            <p class="editorial-label text-muted-foreground px-1">
+              Quick Filter
+            </p>
+            <dl class="mt-2">
               <div>
-                <dt>What changed</dt>
+                <dt>
+                  <span class="qf-key qf-key--changed" />
+                  What changed
+                </dt>
                 <dd>{quickFilter.changed}</dd>
               </div>
               <div>
-                <dt>What matters</dt>
+                <dt>
+                  <span class="qf-key qf-key--matters" />
+                  What matters
+                </dt>
                 <dd>{quickFilter.matters}</dd>
               </div>
               <div>
-                <dt>What to ignore for now</dt>
+                <dt>
+                  <span class="qf-key qf-key--ignore" />
+                  What to ignore for now
+                </dt>
                 <dd>{quickFilter.ignore}</dd>
               </div>
             </dl>
           </aside>
         ) : (
           quickTake.length > 0 && (
-            <aside class="signal-panel my-8 p-5 sm:p-6" aria-label="Quick take">
-              <p class="editorial-label">Quick Take</p>
-              <ul class="mt-4 grid gap-3">
+            <aside class="signal-panel my-10 p-6" aria-label="Quick take">
+              <p class="editorial-label text-muted-foreground">Quick Take</p>
+              <ul class="mt-4 space-y-2.5">
                 {quickTake.map(item => (
-                  <li class="flex gap-3 leading-7">
+                  <li class="text-foreground flex items-start gap-3 text-base">
                     <span
-                      class="bg-accent mt-2 block size-2 shrink-0"
+                      class="bg-accent mt-2 block size-1.5 shrink-0 rounded-full"
                       aria-hidden="true"
                     />
                     <span>{item}</span>
@@ -187,30 +221,38 @@ const ogImage = ogImageUrl
         )
       }
 
-      <div
-        id="article"
-        class="app-prose noise-article prose-headings:scroll-mt-28 mt-8 max-w-none"
-      >
+      <!-- Main Prose Body -->
+      <div id="article" class="app-prose mt-8 max-w-none">
         <Content />
       </div>
 
+      <!-- Update Note -->
       {
         updateNote && (
-          <aside class="border-border bg-surface mt-8 border p-5">
-            <p class="editorial-label">Update note</p>
-            <p class="text-muted-foreground mt-2 leading-7">{updateNote}</p>
+          <aside class="border-border bg-surface-tint mt-12 rounded-lg border p-5 text-sm">
+            <p class="editorial-label text-muted-foreground">Update Note</p>
+            <p class="text-body mt-2 leading-relaxed">{updateNote}</p>
           </aside>
         )
       }
     </article>
 
+    <!-- Keep Reading / Related Stories -->
     {
       relatedPosts.length > 0 && (
-        <section class="border-border mx-auto mt-12 max-w-[980px] border-t pt-8">
-          <p class="editorial-label">Related Stories</p>
-          <ul class="mt-4 grid gap-4 md:grid-cols-3">
-            {relatedPosts.map(post => (
-              <Card {...post} compact />
+        <section class="border-border mx-auto mt-16 max-w-[960px] border-t pt-10">
+          <div class="mb-8 flex items-baseline justify-between">
+            <h2 class="section-heading text-2xl">Related stories</h2>
+            <a
+              href={`/the-noise-filter/categories/${category}`}
+              class="signal-link text-sm font-medium"
+            >
+              More in {categoryInfo?.name ?? "this topic"} &rarr;
+            </a>
+          </div>
+          <ul class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {relatedPosts.map(p => (
+              <Card {...p} variant="h3" layout="tile" />
             ))}
           </ul>
         </section>
@@ -222,12 +264,14 @@ const ogImage = ogImageUrl
 
 <script is:inline>
   function createProgressBar() {
+    if (document.getElementById("reading-progress")) return;
     const progressContainer = document.createElement("div");
     progressContainer.className =
-      "fixed top-0 z-50 h-1 w-full bg-background/70";
+      "fixed top-0 left-0 z-50 h-0.5 w-full bg-transparent";
 
     const progressBar = document.createElement("div");
-    progressBar.className = "h-1 w-0 bg-accent";
+    progressBar.className =
+      "h-full w-0 bg-accent transition-all duration-75 ease-out";
     progressBar.id = "reading-progress";
 
     progressContainer.appendChild(progressBar);
@@ -235,7 +279,7 @@ const ogImage = ogImageUrl
   }
 
   function updateScrollProgress() {
-    document.addEventListener("scroll", () => {
+    const handleScroll = () => {
       const height =
         document.documentElement.scrollHeight -
         document.documentElement.clientHeight;
@@ -243,9 +287,13 @@ const ogImage = ogImageUrl
         height > 0 ? (document.documentElement.scrollTop / height) * 100 : 0;
       const bar = document.getElementById("reading-progress");
       if (bar) bar.style.width = `${scrolled}%`;
-    });
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
   }
 
   createProgressBar();
   updateScrollProgress();
+  document.addEventListener("astro:after-swap", () => {
+    createProgressBar();
+  });
 </script>

@@ -1,32 +1,79 @@
+/* Self-hosted variable fonts (latin subset, SIL Open Font License) */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("../assets/fonts/inter-latin-var.woff2") format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Source Serif 4";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("../assets/fonts/source-serif-4-latin-var.woff2") format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Source Serif 4";
+  font-style: italic;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("../assets/fonts/source-serif-4-latin-italic-var.woff2")
+    format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
+}
+
 /* Register design tokens for Tailwind v4 */
 @theme inline {
   --color-background: var(--background);
   --color-surface: var(--surface);
+  --color-surface-tint: var(--surface-tint);
   --color-surface-strong: var(--surface-strong);
   --color-foreground: var(--foreground);
+  --color-body: var(--body);
   --color-accent: var(--accent);
   --color-accent-soft: var(--accent-soft);
   --color-accent-foreground: var(--accent-foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
   --font-app: var(--font-app-stack);
   --font-display: var(--font-display-stack);
 }
 
-/* Light theme values */
+/* Light theme values — "Signal Notebook" readable editorial blog */
 :root,
 [data-theme="light"] {
-  --background: #f7f4ec;
-  --surface: #fffdf7;
+  --background: #fbfaf6;
+  --surface: #ffffff;
+  --surface-tint: #f3f1ea;
   --surface-strong: #111827;
   --foreground: #172033;
+  --body: #283246;
   --accent: #0b6f66;
   --accent-soft: #d9f264;
   --accent-foreground: #ffffff;
-  --muted: #e8e1d2;
-  --muted-foreground: #586174;
-  --border: #d8cfbd;
+  --muted: #ece8de;
+  --muted-foreground: #5a6375;
+  --border: #e6e1d6;
+  --border-strong: #cfc7b6;
+  --filter-changed: #0b6f66;
+  --filter-matters: #172033;
+  --filter-ignore: #9aa1ad;
   --category-tech: #0b6f66;
   --category-money: #a66200;
   --category-safety: #b94b39;
@@ -35,19 +82,26 @@
   --font-app-stack:
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
-  --font-display-stack: Georgia, "Times New Roman", ui-serif, serif;
+  --font-display-stack:
+    "Source Serif 4", Georgia, "Times New Roman", ui-serif, serif;
 }
 
-/* Dark theme values */
+/* Dark theme values (site currently forces light; kept for parity) */
 [data-theme="dark"] {
   --background: #10151f;
   --surface: #171e2b;
+  --surface-tint: #1c2433;
   --surface-strong: #f7f4ec;
   --foreground: #edf2f7;
+  --body: #d6dde8;
   --accent: #7ce4cf;
   --accent-soft: #d9f264;
   --accent-foreground: #0b151f;
   --muted: #253044;
   --muted-foreground: #abb7c9;
-  --border: #344055;
+  --border: #2c3648;
+  --border-strong: #3d4a60;
+  --filter-changed: #7ce4cf;
+  --filter-matters: #edf2f7;
+  --filter-ignore: #6b7588;
 }

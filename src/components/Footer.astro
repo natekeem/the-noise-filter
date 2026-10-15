@@ -2,6 +2,7 @@
 import type { HTMLAttributes } from "astro/types";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { categories } from "@/data/categories";
+import BrandMark from "@/components/BrandMark.astro";
 import config from "@/config";
 
 type Props = {
@@ -15,68 +16,112 @@ const locale = Astro.currentLocale ?? config.site.lang;
 
 <footer
   class:list={[
-    "border-border bg-surface mt-16 border-t",
+    "border-border bg-surface-tint/60 mt-20 border-t",
     { "mt-auto": !noMarginTop },
     className,
   ]}
   {...attrs}
 >
-  <div class="app-layout py-10">
-    <div class="grid gap-8 lg:grid-cols-[1.3fr_1fr_1fr]">
-      <div>
-        <p class="font-display text-3xl font-bold">The Noise Filter</p>
-        <p class="text-muted-foreground mt-3 max-w-md">
-          Hot stories, filtered for regular adults. Independent explainers, not
-          first-hand reporting.
+  <div class="app-layout py-12 sm:py-16">
+    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr]">
+      <!-- Brand column -->
+      <div class="space-y-4">
+        <div class="flex items-center gap-2.5">
+          <BrandMark class="text-accent h-4 w-auto" />
+          <span class="font-display text-foreground text-xl font-bold">
+            {config.site.title}
+          </span>
+        </div>
+        <p class="text-muted-foreground max-w-sm text-sm leading-relaxed">
+          {config.site.description}
+        </p>
+        <p class="text-muted-foreground text-xs">
+          Hot stories, filtered for regular adults. Independent explainers,
+          verified facts.
         </p>
       </div>
-      <nav aria-label="Footer categories">
-        <p class="editorial-label mb-3">Sections</p>
-        <div class="grid gap-2">
+
+      <!-- Topics column -->
+      <div>
+        <p class="editorial-label text-muted-foreground mb-4">Topics</p>
+        <ul class="space-y-2.5 text-sm">
           {
             categories.map(category => (
-              <a
-                class="signal-link w-fit text-sm"
-                href={getRelativeLocaleUrl(
-                  locale,
-                  `categories/${category.slug}`
-                )}
-              >
-                {category.name}
-              </a>
+              <li>
+                <a
+                  class="text-muted-foreground hover:text-foreground transition-colors"
+                  href={getRelativeLocaleUrl(
+                    locale,
+                    `categories/${category.slug}`
+                  )}
+                >
+                  {category.name}
+                </a>
+              </li>
             ))
           }
-        </div>
-      </nav>
-      <nav aria-label="Footer trust links">
-        <p class="editorial-label mb-3">Trust</p>
-        <div class="grid gap-2">
-          <a
-            class="signal-link w-fit text-sm"
-            href={getRelativeLocaleUrl(locale, "about")}>About</a
-          >
-          <a
-            class="signal-link w-fit text-sm"
-            href={getRelativeLocaleUrl(locale, "contact")}>Contact</a
-          >
-          <a
-            class="signal-link w-fit text-sm"
-            href={getRelativeLocaleUrl(locale, "privacy")}>Privacy</a
-          >
-          <a
-            class="signal-link w-fit text-sm"
-            href={getRelativeLocaleUrl(locale, "disclosure")}>Disclosure</a
-          >
-          <a
-            class="signal-link w-fit text-sm"
-            href={getRelativeLocaleUrl(locale, "rss.xml")}>RSS</a
-          >
-        </div>
-      </nav>
+        </ul>
+      </div>
+
+      <!-- Trust column -->
+      <div>
+        <p class="editorial-label text-muted-foreground mb-4">
+          Editorial & Trust
+        </p>
+        <ul class="space-y-2.5 text-sm">
+          <li>
+            <a
+              class="text-muted-foreground hover:text-foreground transition-colors"
+              href={getRelativeLocaleUrl(locale, "about")}
+            >
+              About & Methodology
+            </a>
+          </li>
+          <li>
+            <a
+              class="text-muted-foreground hover:text-foreground transition-colors"
+              href={getRelativeLocaleUrl(locale, "contact")}
+            >
+              Contact
+            </a>
+          </li>
+          <li>
+            <a
+              class="text-muted-foreground hover:text-foreground transition-colors"
+              href={getRelativeLocaleUrl(locale, "privacy")}
+            >
+              Privacy Policy
+            </a>
+          </li>
+          <li>
+            <a
+              class="text-muted-foreground hover:text-foreground transition-colors"
+              href={getRelativeLocaleUrl(locale, "disclosure")}
+            >
+              Editorial Disclosure
+            </a>
+          </li>
+          <li>
+            <a
+              class="text-muted-foreground hover:text-foreground transition-colors"
+              href={getRelativeLocaleUrl(locale, "rss.xml")}
+            >
+              RSS Feed
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-    <p class="text-muted-foreground border-border mt-8 border-t pt-5 text-sm">
-      Copyright © {currentYear} The Noise Filter. No analytics, ads, affiliate links,
-      comments, or newsletter are enabled in this MVP.
-    </p>
+
+    <!-- Bottom copyright -->
+    <div
+      class="border-border/80 text-muted-foreground mt-12 flex flex-col items-center justify-between gap-4 border-t pt-6 text-xs sm:flex-row"
+    >
+      <p>
+        &copy; {currentYear}
+        {config.site.title}. All rights reserved.
+      </p>
+      <p>No tracking cookies &bull; Independent editorial</p>
+    </div>
   </div>
 </footer>
