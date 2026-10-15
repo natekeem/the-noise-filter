@@ -35,63 +35,32 @@ const leadPostUrl = leadPost
 <Layout>
   <Header />
   <main id="main-content" data-layout="index" class="app-layout pb-16">
-    <!-- Intro Band -->
-    <section
-      class="border-border grid gap-8 border-b py-10 sm:py-14 md:grid-cols-[1.3fr_0.7fr] md:items-end"
-    >
-      <div>
+    <!-- Intro Band: Headline and Value Proposition -->
+    <section class="border-border border-b py-10 sm:py-14">
+      <div class="max-w-3xl">
+        <p class="editorial-label text-accent font-semibold tracking-wider">
+          Independent Explainer Journal
+        </p>
         <h1
-          class="font-display text-foreground text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl"
+          class="font-display text-foreground mt-3 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl"
         >
-          Hot stories, <span class="marker">filtered</span><br
-            class="hidden sm:inline"
-          />
-          for regular adults.
+          Hot stories, <span class="marker">filtered</span> for regular adults.
         </h1>
         <p
-          class="text-muted-foreground mt-4 max-w-xl text-lg leading-relaxed sm:text-xl"
+          class="text-muted-foreground mt-4 text-lg leading-relaxed sm:text-xl"
         >
           What changed, what matters, and what to ignore in technology, online
-          security, consumer policies, and digital culture.
+          security, consumer policies, and digital culture—without hype, jargon,
+          or outrage.
         </p>
-      </div>
-
-      <!-- Quick Filter Legend -->
-      <div class="signal-panel p-5 sm:p-6">
-        <p class="editorial-label text-muted-foreground">
-          How every story is filtered
-        </p>
-        <ul class="mt-3.5 space-y-2.5 text-sm">
-          <li class="flex items-center gap-2.5">
-            <span class="qf-key qf-key--changed"></span>
-            <span class="text-foreground font-medium">What changed</span>
-            <span class="text-muted-foreground"
-              >— verified facts & official policy</span
-            >
-          </li>
-          <li class="flex items-center gap-2.5">
-            <span class="qf-key qf-key--matters"></span>
-            <span class="text-foreground font-medium">What matters</span>
-            <span class="text-muted-foreground"
-              >— direct impact on your wallet & privacy</span
-            >
-          </li>
-          <li class="flex items-center gap-2.5">
-            <span class="qf-key qf-key--ignore"></span>
-            <span class="text-foreground font-medium">What to ignore</span>
-            <span class="text-muted-foreground"
-              >— rumors, hype, and useless outrage</span
-            >
-          </li>
-        </ul>
       </div>
     </section>
 
-    <!-- Lead Story -->
+    <!-- Lead Story with Integrated Quick Filter Box -->
     {
       leadPost && (
         <section
-          class="border-border border-b py-10 sm:py-12"
+          class="border-border border-b py-10 sm:py-14"
           data-category={leadPost.data.category}
         >
           <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
@@ -141,27 +110,27 @@ const leadPostUrl = leadPost
           {leadPost.data.quickFilter && (
             <aside
               class="quick-filter quick-filter--strip mt-8"
-              aria-label="Quick Filter summary"
+              aria-label="Quick Filter breakdown"
             >
               <dl>
                 <div>
                   <dt>
                     <span class="qf-key qf-key--changed" />
-                    What changed
+                    <span>What changed</span>
                   </dt>
                   <dd>{leadPost.data.quickFilter.changed}</dd>
                 </div>
                 <div>
                   <dt>
                     <span class="qf-key qf-key--matters" />
-                    What matters
+                    <span>What matters</span>
                   </dt>
                   <dd>{leadPost.data.quickFilter.matters}</dd>
                 </div>
                 <div>
                   <dt>
                     <span class="qf-key qf-key--ignore" />
-                    What to ignore for now
+                    <span>What to ignore for now</span>
                   </dt>
                   <dd>{leadPost.data.quickFilter.ignore}</dd>
                 </div>
@@ -173,7 +142,7 @@ const leadPostUrl = leadPost
     }
 
     <!-- Main Content Area: Latest List + Topics Sidebar -->
-    <div class="mt-10 grid gap-12 lg:grid-cols-[1fr_20rem] lg:gap-14">
+    <div class="mt-12 grid gap-12 lg:grid-cols-[1fr_20rem] lg:gap-14">
       <!-- Left: Latest Stories List -->
       <section aria-labelledby="latest-stories-heading">
         <div
@@ -199,7 +168,7 @@ const leadPostUrl = leadPost
         </ul>
       </section>
 
-      <!-- Right: Sticky Sidebar (Topics + About) -->
+      <!-- Right: Sticky Sidebar (Topics + Standards Guide + About) -->
       <aside class="space-y-8">
         <!-- Topics Box -->
         <div class="signal-panel p-5 sm:p-6">
@@ -233,6 +202,56 @@ const leadPostUrl = leadPost
           </ul>
         </div>
 
+        <!-- How We Filter Box (Sidebar Guide) -->
+        <div class="signal-panel p-5 sm:p-6">
+          <p class="editorial-label text-muted-foreground">
+            The 3-Point Filter
+          </p>
+          <h3
+            class="font-display text-foreground mt-1.5 text-base font-semibold"
+          >
+            How every story is vetted
+          </h3>
+          <ul class="mt-4 space-y-3.5 text-xs sm:text-sm">
+            <li class="flex items-start gap-3">
+              <span class="qf-key qf-key--changed mt-1 shrink-0"></span>
+              <div>
+                <strong class="text-foreground block font-semibold"
+                  >What changed</strong
+                >
+                <span class="text-muted-foreground text-xs leading-relaxed"
+                  >Official policy, verifiable code, or terms of service
+                  updates.</span
+                >
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="qf-key qf-key--matters mt-1 shrink-0"></span>
+              <div>
+                <strong class="text-foreground block font-semibold"
+                  >What matters</strong
+                >
+                <span class="text-muted-foreground text-xs leading-relaxed"
+                  >Direct, tangible consequences for your household, wallet, or
+                  privacy.</span
+                >
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="qf-key qf-key--ignore mt-1 shrink-0"></span>
+              <div>
+                <strong class="text-foreground block font-semibold"
+                  >What to ignore</strong
+                >
+                <span class="text-muted-foreground text-xs leading-relaxed"
+                  >Internet rumors, panic headlines, and unconfirmed
+                  speculation.</span
+                >
+              </div>
+            </li>
+          </ul>
+        </div>
+
         <!-- About Note -->
         <div
           class="border-border/80 bg-surface-tint rounded-xl border p-5 text-sm"
@@ -240,14 +259,14 @@ const leadPostUrl = leadPost
           <p class="font-display text-foreground text-base font-semibold">
             About The Noise Filter
           </p>
-          <p class="text-muted-foreground mt-2 leading-relaxed">
+          <p class="text-muted-foreground mt-2 text-xs leading-relaxed">
             Independent, research-backed explainers built for regular readers
             who want plain answers without tech industry hype or outrage
             culture.
           </p>
           <a
             href={getRelativeLocaleUrl(locale, "about")}
-            class="signal-link text-accent mt-3 inline-block font-medium"
+            class="signal-link text-accent mt-3 inline-block text-xs font-medium"
           >
             Read our editorial standards &rarr;
           </a>
