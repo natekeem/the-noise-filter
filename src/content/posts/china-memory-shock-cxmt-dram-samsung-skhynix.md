@@ -79,6 +79,9 @@ The industry's long-sought holy grail to break this bottleneck is **4F²**.
 
 Instead of laying the access transistor flat on the silicon surface alongside the capacitor, 4F² turns the transistor on its side into a vertical pillar (Vertical Surrounding Gate, or VSG), with the storage capacitor stacked directly above it. 
 
+![DRAM Silicon Cell Architecture: 6F² Planar vs 4F² Vertical VSG](/the-noise-filter/images/dram-cell-6f2-vs-4f2-architecture.png)
+*Figure 1: DRAM Silicon Cell Architecture Comparison. Stacking the access transistor vertically under the charge capacitor cuts unit cell area from 6F² to 4F² (a 33% reduction), squeezing up to 50% more bits per wafer.*
+
 Because the transistor stands upright like a skyscraper rather than spreading out like a suburban strip mall:
 - The cell footprint shrinks from **$6F^2$ to $4F^2$**—an immediate **33% reduction in physical surface area**.
 - Without altering the underlying lithography resolution, a memory fab can theoretically squeeze **30% to 50% more gigabytes onto the exact same 300mm silicon wafer**.
@@ -117,6 +120,9 @@ To bridge the gap, CXMT must employ aggressive multi-patterning techniques, such
 - A single layer requires four to six separate lithography exposures, spacer depositions, and chemical etch steps just to define one line.
 - Each additional mask alignment introduces physical drift. At sub-15nm geometries, an overlay error of just **1.2 nanometers** ruins the entire circuit.
 - If a single step has a 98% success rate, repeating that step six times drops the cumulative yield exponentially.
+
+![Semiconductor Lithography Realities: Single-Pass EUV vs DUV SAQP Multi-Patterning](/the-noise-filter/images/euv-vs-duv-saqp-yield-curve.png)
+*Figure 2: Fab Yield Dynamics. While EUV achieves 85%–90% commercial wafer yield in a single exposure, DUV quadruple patterning (SAQP) compounds overlay defects, depressing yields to 35%–50% and requiring state subsidies.*
 
 ### The Real Cost Equation: Die Density vs. Wafer Yield
 
