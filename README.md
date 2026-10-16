@@ -1,48 +1,59 @@
 # The Noise Filter
 
-The Noise Filter is an English trend-briefing MVP for Project AI Autoblog.
+> **"What changed, what matters, and what to ignore."**
+> Cutting through technology hype, platform policy shifts, consumer traps, and global market signals with clear, evidence-based explainers.
 
-**Tagline:** What changed, what matters, and what to ignore.
+- **Live URL**: [https://natekeem.com/the-noise-filter/](https://natekeem.com/the-noise-filter/)
+- **Repository**: [natekeem/the-noise-filter](https://github.com/natekeem/the-noise-filter)
+- **Deployment**: GitHub Pages project site
+- **Engine / Theme**: Astro 4.x + AstroPaper
+- **Publication Corpus**: 10 published investigative explainers (as of 2026-10-16)
+- **Search & Feeds**: Sitemaps (`/the-noise-filter/sitemap-index.xml`), RSS (`/the-noise-filter/rss.xml`), Pagefind Search
 
-## Status
+---
 
-Draft-only scaffold. Nothing in this repository is published as a website.
+## 🔍 Editorial Position & Coverage
 
-- Two pilot articles are stored with `draft: true`.
-- No custom domain or legally cleared brand claim.
-- No analytics, GTM, AdSense, `ads.txt`, affiliate links, comments, or newsletter.
-- No Search Console registration or public deployment workflow.
-- Human review is required before any article can be published.
+The Noise Filter translates complex technological disruptions, corporate policy changes, and international tech-cultural phenomena into high-signal briefings for pragmatic readers.
 
-## Engine
+### Core Topic Categories
 
-Astro + AstroPaper. The scaffold reuses the established Project AI Autoblog AstroPaper pattern while keeping this repository independent.
+1. **Tech & AI** (`/the-noise-filter/categories/tech-ai/`): Semiconductor physics & memory market shocks (CXMT $4F^2$ DRAM vs Samsung/SK Hynix), AI agent features, hardware architecture.
+2. **Money & Consumer Changes** (`/the-noise-filter/categories/money-consumer-changes/`): Hidden cancellation traps, subscription pricing tactics.
+3. **Online Safety** (`/the-noise-filter/categories/online-safety/`): Passkeys, biometric backup limits, mobile OS privacy defenses.
+4. **Streaming & Entertainment** (`/the-noise-filter/categories/streaming-entertainment/`): Household sharing restrictions, streaming mobile UI pivots.
+5. **Korea & Global Culture** (`/the-noise-filter/categories/korea-global-culture/`): Foreign payment kiosk traps in cashless South Korea, Google Maps regulatory mechanics.
 
-The configured site URL uses the reserved `.invalid` domain until a later manual brand and domain review is complete.
+---
 
-## Editorial position
+## 🎨 Visual & Editorial Guardrails
 
-Hot stories, filtered for regular adults. Articles explain confirmed changes in plain English, separate unknowns from facts, and give readers a short list of practical checks.
+- **Expressive Editorial Covers**: Avoids sterile laptop stock photography. Uses candid human emotion (financial analysts reacting to market shocks, intense focus, contemplation), authentic tech hardware, and bold dark-mode magazine aesthetics.
+- **Mandatory Inline Explanatory Diagrams**: Every long-form article features at least 2 inline diagrams (e.g. DRAM cell architecture cross-sections, EUV vs DUV SAQP yield curves, decision trees) generated at 1200×675 via local headless Chrome.
+- **YMYL Categorization Guardrail**: Semiconductor manufacturing and market analyses are strictly classified under `tech-ai` rather than financial advice (`money-consumer-changes`), rooting analysis in physics, lithography, and packaging.
+- **Strict Evidence Standard**: Separates confirmed facts, rollout realities, and market uncertainties. Every article requires a linked primary source list and human review approval.
 
-Initial categories:
+---
 
-- Tech & AI
-- Money & Consumer Changes
-- Online Safety
-- Streaming & Entertainment
-- Korea & Global Culture
+## 🛠️ Local Development & Build
 
-## Local checks
+```bash
+# Install dependencies
+pnpm install
 
-```sh
-pnpm install --frozen-lockfile
+# Start local development server
+pnpm run dev
+
+# Check code formatting and Astro types
 pnpm run format:check
-pnpm run astro -- check
+pnpm run astro check
+
+# Production build
 pnpm run build
 ```
 
-Production builds must not generate routes for files marked `draft: true`.
+---
 
-## Theme attribution
+## 📄 License & Attribution
 
-Built with Astro and the AstroPaper theme/starter. See `LICENSE` for the inherited open-source license.
+Built with [Astro](https://astro.build) and the [AstroPaper](https://github.com/satnaing/astro-paper) starter theme. Editorial content, diagrams, and site configurations are property of Project AI Autoblog / `natekeem`.
