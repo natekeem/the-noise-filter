@@ -55,7 +55,8 @@ That creative accounting broke against modern AI engineering:
 2. **The Battery Storage Wall**: To bridge sundown and multi-day wind lulls, a single 1-gigawatt AI datacenter would require tens of gigawatt-hours of utility-scale lithium-iron-phosphate (LFP) battery storage. The capital cost alone exceeds $4 billion every 10 years when cells degrade.
 3. **Transmission Interconnection Queues**: Building brand-new solar and wind farms in rural counties takes 5 to 7 years just to clear regional grid interconnection studies (e.g., PJM or MISO queues).
 
-![The AI Power Trilemma: Solar and Wind vs. Gas Peakers vs. Nuclear Baseload](/images/01-ai-power-trilemma-nuclear-baseload.png)
+![Three Mile Island Nuclear Generating Station aerial view with Unit 1 active cooling towers and Unit 2 in the background](/the-noise-filter/images/three-mile-island-facility-real.jpg)
+*Figure 1: The Three Mile Island nuclear facility on the Susquehanna River in Pennsylvania. Microsoft's 20-year Power Purchase Agreement exclusively refurbishes Unit 1 (foreground, 835MW, shuttered in 2019 for economic reasons), while the Unit 2 reactor that melted down in 1979 (background) remains permanently decommissioned.*
 
 Nuclear fission solves all three constraints. A commercial nuclear reactor operates at a **93.5% capacity factor**—delivering reliable, carbon-free electrons 24 hours a day, 365 days a year. 
 
@@ -98,7 +99,8 @@ Every dollar required to rebuild the turbine, purchase enriched uranium fuel, an
 
 In fact, adding 835 megawatts of clean baseload supply into the regional PJM grid pool puts downward pressure on peak wholesale spot prices during severe winter freezes and summer heatwaves.
 
-![Private PPA Insulation vs. Public Ratepayer Grid Interconnection Friction](/images/02-nuclear-ppa-vs-ratepayer-grid-friction.png)
+![High-voltage 500kV and 230kV electrical transmission lines and utility towers in Northern Virginia](/the-noise-filter/images/dominion-500kv-transmission-grid-real.jpg)
+*Figure 2: Regional 500kV and 230kV high-voltage transmission lines in Northern Virginia, the heart of the PJM grid. The core regulatory battleground over AI nuclear PPAs centers at FERC over who pays for auxiliary grid upgrades—the hyperscalers driving the load growth or everyday residential ratepayers.*
 
 ### 2. The Transmission Battleground (The Real Friction Point)
 
