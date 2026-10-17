@@ -7,7 +7,7 @@
 - **Repository**: [natekeem/the-noise-filter](https://github.com/natekeem/the-noise-filter)
 - **Deployment**: GitHub Pages project site
 - **Engine / Theme**: Astro 4.x + AstroPaper
-- **Publication Corpus**: 10 published investigative explainers (as of 2026-10-16)
+- **Publication Corpus**: 11 published investigative explainers (as of 2026-10-17)
 - **Search & Feeds**: Sitemaps (`/the-noise-filter/sitemap-index.xml`), RSS (`/the-noise-filter/rss.xml`), Pagefind Search
 
 ---
@@ -18,7 +18,7 @@ The Noise Filter translates complex technological disruptions, corporate policy 
 
 ### Core Topic Categories
 
-1. **Tech & AI** (`/the-noise-filter/categories/tech-ai/`): Semiconductor physics & memory market shocks (CXMT $4F^2$ DRAM vs Samsung/SK Hynix), AI agent features, hardware architecture.
+1. **Tech & AI** (`/the-noise-filter/categories/tech-ai/`): Semiconductor physics (CXMT vs Samsung/SK Hynix), Big Tech nuclear energy PPAs for AI datacenters (Three Mile Island Crane Center), AI agent features.
 2. **Money & Consumer Changes** (`/the-noise-filter/categories/money-consumer-changes/`): Hidden cancellation traps, subscription pricing tactics.
 3. **Online Safety** (`/the-noise-filter/categories/online-safety/`): Passkeys, biometric backup limits, mobile OS privacy defenses.
 4. **Streaming & Entertainment** (`/the-noise-filter/categories/streaming-entertainment/`): Household sharing restrictions, streaming mobile UI pivots.
@@ -29,7 +29,7 @@ The Noise Filter translates complex technological disruptions, corporate policy 
 ## 🎨 Visual & Editorial Guardrails
 
 - **Expressive Editorial Covers**: Avoids sterile laptop stock photography. Uses candid human emotion (financial analysts reacting to market shocks, intense focus, contemplation), authentic tech hardware, and bold dark-mode magazine aesthetics.
-- **Mandatory Inline Explanatory Diagrams**: Every long-form article features at least 2 inline diagrams (e.g. DRAM cell architecture cross-sections, EUV vs DUV SAQP yield curves, decision trees) generated at 1200×675 via local headless Chrome.
+- **Mandatory Inline Explanatory Diagrams**: Every long-form article features at least 2 inline diagrams (e.g. DRAM cell architecture cross-sections, EUV vs DUV SAQP yield curves, nuclear PPA transmission flowcharts) generated at 2x Retina HiDPI (2400×1350) via local headless Chrome.
 - **YMYL Categorization Guardrail**: Semiconductor manufacturing and market analyses are strictly classified under `tech-ai` rather than financial advice (`money-consumer-changes`), rooting analysis in physics, lithography, and packaging.
 - **Strict Evidence Standard**: Separates confirmed facts, rollout realities, and market uncertainties. Every article requires a linked primary source list and human review approval.
 
