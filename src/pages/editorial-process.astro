@@ -1,0 +1,159 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Main from "@/components/Main.astro";
+import Footer from "@/components/Footer.astro";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import config from "@/config";
+
+const locale = Astro.currentLocale ?? config.site.lang;
+---
+
+<Layout
+  title={`Editorial Process | ${config.site.title}`}
+  description="How The Noise Filter verifies facts, filters viral noise, and enforces rigorous editorial standards."
+>
+  <Header />
+  <Main pageTitle="Editorial Process" eyebrow="Trust" class="app-prose">
+    <p>
+      The Noise Filter is an independent publication designed to turn down the
+      internet's volume knob. We provide calm, verified explainers on complex
+      technology shifts, platform rollouts, consumer subscription traps, and
+      digital policy for regular adults who want the signal without the noise.
+    </p>
+
+    <h2>The Signal Framework: What Changed, Matters, and to Ignore</h2>
+    <p>
+      Every explainer on The Noise Filter begins with a structured 3-part Quick
+      Filter:
+    </p>
+    <ul>
+      <li>
+        <strong>What Changed:</strong> The verifiable event, firmware rollout,
+        pricing change, or regulatory filing that actually occurred.
+      </li>
+      <li>
+        <strong>Why It Matters:</strong> The practical, financial, or security
+        consequence for everyday consumers and professionals.
+      </li>
+      <li>
+        <strong>What to Ignore:</strong> The viral exaggeration, speculative
+        panic, or corporate marketing spin that can be safely disregarded.
+      </li>
+    </ul>
+    <p>
+      Within every deep dive, we rigorously separate four categories of information:
+      <em>Confirmed Facts</em>, <em>Active Rollout Realities</em>, <em>Unclear or
+      Pending Questions</em>, and <em>Industry Speculation</em>.
+    </p>
+
+    <h2>Primary Source Hierarchy</h2>
+    <p>
+      We do not aggregate third-party rumors or rephrase unverified blog posts.
+      Our research follows a strict evidence hierarchy:
+    </p>
+    <ol>
+      <li>
+        <strong>Official Technical & Support Documentation:</strong> Manufacturer
+        spec sheets, developer documentation, API changelogs, and official support
+        articles.
+      </li>
+      <li>
+        <strong>Regulatory & Legal Filings:</strong> Formal dockets and orders
+        from government bodies (e.g., FERC, FTC, SEC, FCC, South Korea's KCC and
+        National Geographic Information Institute).
+      </li>
+      <li>
+        <strong>Standards & Industry Specifications:</strong> Engineering standards
+        (IEEE, FIDO Alliance, JEDEC), public utility tariffs, and peer-reviewed
+        research.
+      </li>
+      <li>
+        <strong>Reputable Secondary Reporting:</strong> Used strictly for context
+        and chronological tracking, never as the sole basis for technical or
+        financial assertions.
+      </li>
+    </ol>
+
+    <h2>Visual Authenticity & Anti-PPT Rule</h2>
+    <p>
+      We reject generic AI stock illustrations (such as repetitive laptops on
+      sterile desks) and generic corporate slide templates. Our explanatory
+      visuals are selected to match the physical reality of the subject:
+    </p>
+    <ul>
+      <li>
+        <strong>Physical Reality & Reference Photography:</strong> Authentic
+        hardware, component cross-sections, and facility photography verified
+        under commercial public domain, CC0, or CC-BY licensing.
+      </li>
+      <li>
+        <strong>Real Software & Interface Captures:</strong> Exact mobile settings
+        menus, platform toggles, and official repository assets.
+      </li>
+      <li>
+        <strong>Minimalist Decision Schematics:</strong> High-contrast, clean
+        flowcharts and mathematical comparisons that make costs, trade-offs, and
+        decision trees immediately transparent.
+      </li>
+    </ul>
+
+    <h2>AI Assistance with Mandatory Human Gate</h2>
+    <p>
+      We believe in ethical, transparent use of technology. Artificial intelligence
+      tools are utilized to assist with information synthesis, outline organization,
+      and readability analysis.
+    </p>
+    <p>
+      However, <strong>no article is published autonomously</strong>. Under our
+      standard operating policy, every piece passes through a mandatory human editorial
+      gate. The human editor:
+    </p>
+    <ul>
+      <li>Verifies all numerical claims, pricing details, and regulatory citations against primary sources.</li>
+      <li>Removes speculative certainty and ensures nuanced boundary conditions are clearly stated.</li>
+      <li>Eliminates promotional fluff and enforces an analytical, calm tone.</li>
+      <li>Confirms that no fabricated first-hand experience, synthetic benchmark data, or fictitious interviews are present.</li>
+      <li>Makes the final, binding publication decision.</li>
+    </ul>
+    <p>
+      For historical articles created during earlier prototyping stages without
+      pre-publish review packets, retrospective editorial audits are conducted
+      against these exact standards to verify factual integrity and ensure source accuracy.
+    </p>
+
+    <h2>Corrections and Dynamic Updates</h2>
+    <p>
+      Technology platforms and subscription terms evolve constantly. Each article
+      carries an explicit verification date note. When material policies change,
+      we update the analysis and record the modification.
+    </p>
+    <p>
+      Readers who spot factual discrepancies or broken references are encouraged
+      to submit a report via our public tracker:
+    </p>
+    <p>
+      <a
+        href="https://github.com/natekeem/the-noise-filter/issues"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Submit a correction via GitHub Issues
+      </a>
+    </p>
+
+    <h2>Commercial Independence</h2>
+    <p>
+      The Noise Filter does not accept sponsored content, paid guest posts,
+      affiliate marketing links, or compensation for favorable coverage. Our
+      editorial evaluations are made solely on technical merits, regulatory
+      realities, and consumer interests.
+    </p>
+    <p>
+      For questions about site policies, see our{" "}
+      <a href={getRelativeLocaleUrl(locale, "disclosure")}>Editorial Disclosure</a>{" "}
+      and <a href={getRelativeLocaleUrl(locale, "privacy")}>Privacy Policy</a>.
+    </p>
+  </Main>
+  <Footer />
+</Layout>

@@ -80,6 +80,14 @@ const locale = Astro.currentLocale ?? config.site.lang;
           <li>
             <a
               class="text-muted-foreground hover:text-foreground transition-colors"
+              href={getRelativeLocaleUrl(locale, "editorial-process")}
+            >
+              Editorial Process
+            </a>
+          </li>
+          <li>
+            <a
+              class="text-muted-foreground hover:text-foreground transition-colors"
               href={getRelativeLocaleUrl(locale, "contact")}
             >
               Contact

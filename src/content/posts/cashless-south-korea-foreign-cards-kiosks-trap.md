@@ -9,11 +9,8 @@ contentType: "Explainer"
 featured: true
 draft: false
 tags:
-  - korea-global-culture
-  - travel-tips
-  - consumer-finance
-  - payment-apps
   - south-korea
+  - consumer-rights
 description: "South Korea is statistically one of the most cashless societies on earth. But for international visitors, that digital paradise quickly turns into a maze of rejected cards, cash-only subway turnstiles, and identity verification walls. Here is why it happens—and how to never get stranded."
 ogImage: "images/cashless-south-korea-foreign-cards-kiosks-trap-cover.png"
 coverAlt: "An authentic traveler wallet and payment setup on a cafe wooden table showing physical cards, a transport pass, and modest Korean Won notes."

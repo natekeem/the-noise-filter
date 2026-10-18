@@ -9,10 +9,7 @@ contentType: "Explainer"
 featured: false
 draft: false
 tags:
-  - online-safety
-  - passkeys
-  - cybersecurity
-  - phone-security
+  - privacy-controls
   - tech-explainer
 description: "Big tech wants you to replace passwords with passkeys, but what happens if your phone is lost, stolen, or broken? Here is how account recovery actually works."
 ogImage: "images/passkeys-explained-what-happens-when-you-lose-your-phone-cover.png"

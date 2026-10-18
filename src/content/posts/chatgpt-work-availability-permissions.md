@@ -9,10 +9,8 @@ contentType: "Explainer"
 featured: false
 draft: false
 tags:
-  - tech-ai
-  - chatgpt
-  - ai-assistants
   - privacy-controls
+  - ai-tools
 description: "ChatGPT Work has different access rules on desktop, web, and mobile. Here is what it can use, when permissions matter, and what to check first."
 ogImage: "images/chatgpt-work-availability-permissions-cover.png"
 coverAlt: "A laptop and abstract work surfaces connected through a small lime control slider on a modern editorial desk."

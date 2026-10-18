@@ -9,9 +9,6 @@ contentType: "Explainer"
 featured: true
 draft: false
 tags:
-  - streaming-entertainment
-  - netflix
-  - disney-plus
   - consumer-rights
   - app-changes
   - tech-explainer

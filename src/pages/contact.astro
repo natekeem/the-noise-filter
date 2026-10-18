@@ -3,22 +3,59 @@ import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Main from "@/components/Main.astro";
 import Footer from "@/components/Footer.astro";
+import { getRelativeLocaleUrl } from "astro:i18n";
 import config from "@/config";
+
+const locale = Astro.currentLocale ?? config.site.lang;
 ---
 
 <Layout
   title={`Contact | ${config.site.title}`}
-  description="Contact policy for The Noise Filter."
+  description="How to contact The Noise Filter about editorial corrections or site feedback."
 >
   <Header />
-  <Main pageTitle="Contact" eyebrow="Trust" class="app-prose">
+  <Main pageTitle="Contact & Corrections" eyebrow="Trust" class="app-prose">
     <p>
-      The Noise Filter is an unpublished MVP. A public correction and contact
-      channel will be added before launch.
+      The Noise Filter maintains a transparent, public corrections workflow.
+      If you discover a factual error, broken source reference, outdated platform
+      policy, or accessibility issue in any published article, please let us know.
     </p>
+
     <p>
-      The MVP does not provide a contact form, comments, newsletter, account
-      system, phone number, or physical mailing address.
+      <a
+        href="https://github.com/natekeem/the-noise-filter/issues"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Open a public issue for The Noise Filter
+      </a>
+    </p>
+
+    <h2>What to include in a correction report</h2>
+    <ul>
+      <li>The published article URL.</li>
+      <li>The exact sentence, claim, or figure in question.</li>
+      <li>A link to supporting primary documentation (e.g. official support articles, regulatory filings, manufacturer specs).</li>
+    </ul>
+
+    <p>
+      Substantive correction requests are evaluated against current primary sources.
+      A request does not guarantee a change when evidence does not warrant one,
+      and no response timeline is guaranteed.
+    </p>
+
+    <p>
+      The Noise Filter is an independent static publication. We do not operate
+      a telephone center, physical newsroom, customer service desk, user account system,
+      or comments section.
+    </p>
+
+    <p>
+      For more information on how we verify claims and process updates, please
+      review our{" "}
+      <a href={getRelativeLocaleUrl(locale, "editorial-process")}>
+        Editorial Process
+      </a>.
     </p>
   </Main>
   <Footer />

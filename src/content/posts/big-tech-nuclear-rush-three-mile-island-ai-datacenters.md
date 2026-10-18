@@ -9,12 +9,10 @@ contentType: "Explainer"
 featured: true
 draft: false
 tags:
-  - tech-ai
-  - nuclear-energy
-  - ai-datacenters
-  - microsoft
-  - clean-energy
-  - electricity-rates
+  - tech-explainer
+  - consumer-rights
+  - hardware
+  - ai-tools
 description: "When Microsoft pledged $1.6 billion to revive Unit 1 of Three Mile Island, headlines warned of soaring electric bills and AI energy blackouts. Here is the unvarnished engineering math, the FERC regulatory battleground, and what it actually means for your utility bill."
 ogImage: "images/big-tech-nuclear-rush-three-mile-island-ai-datacenters-cover.png"
 coverAlt: "Atmospheric photojournalism shot of a nuclear power facility cooling tower at dusk with high-voltage transmission lines carrying power toward tech datacenters."

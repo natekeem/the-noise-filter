@@ -9,9 +9,9 @@ contentType: "Explainer"
 featured: false
 draft: false
 tags:
-  - online-safety
-  - android
-  - phone-security
+  - privacy-controls
+  - app-changes
+  - hardware
 description: "Android 17 adds theft, scam-call, and app-safety protections, but their availability still depends on your phone, region, bank, and settings."
 ogImage: "images/android-17-security-protections-cover.png"
 coverAlt: "A generic smartphone surrounded by layered security signals in a restrained editorial composition."

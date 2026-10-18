@@ -25,8 +25,22 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap({
-      filter: page =>
-        config.features?.showArchives !== false || !page.endsWith("/archives/"),
+      filter: page => {
+        const pathname = new URL(page).pathname;
+        const normalized = pathname.replace(/^\/the-noise-filter/, "");
+        const isHiddenArchive =
+          config.features?.showArchives === false &&
+          normalized.endsWith("/archives/");
+        const isUtilityRoute =
+          normalized === "/search/" ||
+          normalized === "/search" ||
+          normalized === "/tags/" ||
+          normalized === "/tags" ||
+          normalized.startsWith("/tags/");
+        const isSecondaryPostsPage = /^\/posts\/\d+\/?$/.test(normalized);
+
+        return !isHiddenArchive && !isUtilityRoute && !isSecondaryPostsPage;
+      },
     }),
   ],
   i18n: {

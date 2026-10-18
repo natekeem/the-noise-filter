@@ -9,11 +9,8 @@ contentType: "Explainer"
 featured: true
 draft: false
 tags:
-  - korea-global-culture
-  - travel-tech
-  - navigation
-  - google-maps
   - south-korea
+  - tech-explainer
 description: "If you land in Seoul expecting Google Maps to guide your steps, you will quickly find a silent blue dot and no walking route. Here is the real national security law behind it—and how to navigate like a local without knowing Korean."
 ogImage: "images/why-google-maps-doesnt-work-in-south-korea-cover.png"
 coverAlt: "A clean traveler desk with a smartphone displaying a map route next to a passport, transit card, and notebook under warm editorial light."

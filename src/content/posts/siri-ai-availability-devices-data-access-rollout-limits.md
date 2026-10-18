@@ -9,11 +9,9 @@ contentType: "Explainer"
 featured: false
 draft: false
 tags:
-  - tech-ai
-  - siri-ai
-  - apple-intelligence
   - privacy-controls
-  - rollout
+  - app-changes
+  - ai-tools
 description: "Apple's new Siri AI is in developer testing, with device, language, region, app-support, and privacy limits that matter before the consumer beta."
 ogImage: "images/siri-ai-availability-devices-data-access-rollout-limits-cover.png"
 coverAlt: "A tablet, phone, watch, and computer separated by translucent access boundaries and linked by a restrained teal signal."

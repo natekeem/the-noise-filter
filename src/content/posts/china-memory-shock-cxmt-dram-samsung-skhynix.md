@@ -9,11 +9,8 @@ contentType: "Explainer"
 featured: true
 draft: false
 tags:
-  - tech-ai
-  - semiconductors
-  - dram
-  - samsung
-  - sk-hynix
+  - tech-explainer
+  - south-korea
   - hardware
 description: "When Chinese memory maker CXMT unveiled its 4F² vertical DRAM roadmap, South Korean chip stocks lost billions overnight. Here is what actually changed in silicon physics, why EUV sanctions matter, and what it means for everyday tech prices."
 ogImage: "images/china-memory-shock-cxmt-dram-samsung-skhynix-cover.png"

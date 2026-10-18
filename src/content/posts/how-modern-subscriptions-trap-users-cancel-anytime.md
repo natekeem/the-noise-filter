@@ -9,11 +9,8 @@ contentType: "Explainer"
 featured: true
 draft: false
 tags:
-  - money-consumer-changes
-  - subscriptions
   - consumer-rights
-  - dark-patterns
-  - personal-finance
+  - app-changes
 description: "Services promise that cancellation is effortless, but modern apps use retention mazes, billing disconnects, and cutoff traps to keep charging you. Here is how to actually escape."
 ogImage: "images/how-modern-subscriptions-trap-users-cancel-anytime-cover.png"
 coverAlt: "A clean modern desk with an abstract digital billing interface and subtle cancel controls in a restrained editorial composition."

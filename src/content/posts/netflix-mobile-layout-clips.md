@@ -8,9 +8,8 @@ contentType: "Explainer"
 featured: true
 draft: false
 tags:
-  - streaming-entertainment
-  - netflix
   - app-changes
+  - consumer-rights
 description: "Netflix has refreshed its mobile navigation and introduced Clips, a vertical discovery feed that is still rolling out by country and device."
 ogImage: "images/netflix-mobile-clips-cover.png"
 coverAlt: "A generic smartphone with abstract vertical entertainment clips arranged in a modern editorial composition."

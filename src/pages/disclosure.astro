@@ -3,27 +3,65 @@ import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Main from "@/components/Main.astro";
 import Footer from "@/components/Footer.astro";
+import { getRelativeLocaleUrl } from "astro:i18n";
 import config from "@/config";
+
+const locale = Astro.currentLocale ?? config.site.lang;
 ---
 
 <Layout
-  title={`Disclosure | ${config.site.title}`}
-  description="Disclosure policy for The Noise Filter."
+  title={`Editorial Disclosure | ${config.site.title}`}
+  description="Disclosure policy on AI assistance, sourcing, and commercial independence for The Noise Filter."
 >
   <Header />
-  <Main pageTitle="Disclosure" eyebrow="Trust" class="app-prose">
+  <Main pageTitle="Editorial Disclosure" eyebrow="Trust" class="app-prose">
     <p>
-      Content on The Noise Filter may be created with AI assistance and human
-      review.
+      The Noise Filter believes in complete transparency regarding how our
+      content is researched, assembled, and funded.
     </p>
+
+    <h2>AI Assistance and Human Editorial Gate</h2>
     <p>
-      The site currently has no affiliate links, sponsored content, display ads,
-      or paid product placements.
+      Articles on The Noise Filter may use AI tools for research synthesis,
+      outlining, draft drafting, readability checks, and cross-source comparison.
+      However, our editorial policy strictly prohibits autonomous publishing:
+      content requires human review to verify claims, enforce our anti-hype tone,
+      and confirm factual evidence. Historical articles published during early
+      prototyping have undergone retrospective factual audits to ensure adherence
+      to these verification standards.
     </p>
+
+    <h2>No Fabricated Experience or Testing</h2>
     <p>
-      If future content includes ads, affiliate links, sponsorships, or other
-      commercial relationships, those relationships will require a separate
-      decision and clear disclosure.
+      We strictly prohibit fabricated first-hand testing, synthetic benchmark
+      scores, fictional device teardowns, or simulated insider interviews. When an
+      article discusses hardware specs or platform features, it is based on official
+      engineering whitepapers, regulatory dockets, manufacturer documentation,
+      and confirmed user reports—clearly identified as secondary analytical research.
+    </p>
+
+    <h2>Commercial Independence</h2>
+    <p>
+      The Noise Filter currently operates with complete commercial independence:
+    </p>
+    <ul>
+      <li>No affiliate links or referral commissions.</li>
+      <li>No sponsored articles, advertorials, or paid guest posts.</li>
+      <li>No paid product rankings or commercial placements.</li>
+      <li>No third-party display ad networks.</li>
+    </ul>
+    <p>
+      If commercial relationships or advertising are introduced in the future,
+      they will be explicitly disclosed in accordance with FTC guidelines and our
+      editorial standards.
+    </p>
+
+    <p>
+      Read our{" "}
+      <a href={getRelativeLocaleUrl(locale, "editorial-process")}>
+        Editorial Process
+      </a>{" "}
+      for complete details on our source verification rules and quality criteria.
     </p>
   </Main>
   <Footer />
