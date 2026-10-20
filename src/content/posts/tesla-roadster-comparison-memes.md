@@ -12,8 +12,8 @@ tags:
   - tech-explainer
   - hardware
 description: "From earnest 2017 Reddit spec sheets to absurdist parody graphics and rocket-thruster stunts: how internet culture weaponized comparison charts against decade-long automotive vaporware."
-ogImage: "images/tesla-roadster-comparison-memes-cover.png"
-coverAlt: "Editorial dark-mode automotive poster showing a sleek futuristic sports car silhouette and satirical comparison metric cards."
+ogImage: "images/tesla-roadster-comparison-memes-cover.jpg"
+coverAlt: "The red second-generation Tesla Roadster prototype unveiled on stage during its November 2017 presentation in Hawthorne, California."
 quickFilter:
   changed: "Tesla showcased refreshed Roadster prototype footage with stunt maneuvers and renewed promises of SpaceX cold-gas thruster packages, reviving a decade-old internet meme cycle."
   matters: "Earnest 2017 comparison charts pitting the $200,000 Roadster against million-dollar hypercars mutated into absurd parodies, exposing how internet culture weaponizes satire against decade-long product delays."
@@ -29,8 +29,8 @@ Almost immediately, automotive message boards and Reddit communities witnessed a
 
 Yet nearly a decade later, the vehicle remains unproduced, while the comparison chart format itself mutated into one of the most enduring, self-referential satires in internet history.
 
-![Timeline tracking the nine-year escalation of Tesla Roadster promises, delays, deposits, and meme iterations](/the-noise-filter/images/01-roadster-timeline-escalation.png)
-_Figure 1: The nine-year evolution of the Roadster narrative. What began as earnest enthusiast comparison graphics against legacy hypercars transformed into absurdist parodies as production slipped year after year. Diagram: The Noise Filter Editorial Desk._
+![The red second-generation Tesla Roadster prototype on exhibition display at the Computer History Museum in Mountain View, California](/the-noise-filter/images/01-tesla-roadster-prototype-exhibition.jpg)
+_Figure 1: The red second-generation Tesla Roadster prototype displayed at the Computer History Museum in Mountain View, California. Unveiled with promised 2020 availability, the physical hardware has remained an exhibition and showcase model for nearly a decade. Photo: Editor928111, CC BY-SA 4.0, via Wikimedia Commons._
 
 ## The November 2017 Spec Sheet That Broke Reddit
 
@@ -41,6 +41,9 @@ Early graphics placed the unreleased Roadster side by side with the Bugatti Chir
 Documented on internet culture archives like *Know Your Meme* under the entry ***Tesla Roadster Comparisons***, the initial viral wave was characterized by genuine technological optimism. Enthusiasts believed they were witnessing a genuine paradigm shift in vehicular physics.
 
 Then 2020 arrived—and passed without a single customer delivery.
+
+![Timeline tracking the nine-year escalation of Tesla Roadster promises, delays, deposits, and meme iterations](/the-noise-filter/images/02-roadster-timeline-escalation.png)
+_Figure 2: The nine-year evolution of the Roadster narrative. What began as earnest enthusiast comparison graphics against legacy hypercars transformed into absurdist parodies as production slipped year after year. Diagram: The Noise Filter Editorial Desk._
 
 ## When Parody Eclipsed Sincerity: The "Banana vs. Roadster" Wave
 
@@ -64,8 +67,8 @@ Viral variations spread across Reddit, Imgflip, and Twitter:
 
 The humor functioned as an informal consumer accountability mechanism. In Silicon Valley tech culture, marketing teams routinely present forward-looking prototype claims as foregone conclusions. By contrasting astronomical hypothetical specifications with humble, everyday items that simply exist in physical reality, parody creators highlighted the fundamental absurdity of celebrating vaporware.
 
-![Structured matrix comparing earnest 2017 claims, physical engineering realities, and satirical meme metrics](/the-noise-filter/images/02-parody-spec-grid-matrix.png)
-_Figure 2: Deconstruction matrix contrasting the original 2017 promotional narrative against physical automotive engineering constraints and the resulting internet satire. Analysis: The Noise Filter Editorial Desk._
+![Structured matrix comparing earnest 2017 claims, physical engineering realities, and satirical meme metrics](/the-noise-filter/images/03-parody-spec-grid-matrix.png)
+_Figure 3: Deconstruction matrix contrasting the original 2017 promotional narrative against physical automotive engineering constraints and the resulting internet satire. Analysis: The Noise Filter Editorial Desk._
 
 ## The 9-Year Deposit Reality: Between Zero-Interest Loans and Cold-Gas Thrusters
 
@@ -84,6 +87,9 @@ Yet physical engineering imposes non-negotiable boundaries:
 - **Tire friction limits:** Terrestrial street tires cannot transmit sufficient friction to launch a production vehicle from 0 to 60 mph in under one second without specialized drag-strip adhesive prep or rocket thrust.
 - **Gross vehicle weight:** Storing 200 kWh of energy using current cell chemistry adds massive curb weight, directly working against agile roadster handling dynamics.
 - **Regulatory road clearance:** High-pressure gas thrusters operating at several thousand psi present catastrophic pedestrian safety, noise, and Department of Transportation (DOT) certification hurdles that no highway regulatory agency has approved for consumer road vehicles.
+
+![Close-up of the sculpted rear fascia, carbon fiber aerodynamic diffuser, and active rear spoiler on the Tesla Roadster prototype](/the-noise-filter/images/04-tesla-roadster-rear-aero.jpg)
+_Figure 4: Sculpted rear fascia and aggressive carbon fiber aerodynamic diffuser on the Tesla Roadster prototype at Tesla headquarters. While the physical hardware incorporates sophisticated passive aerodynamics, theoretical add-ons like cold-gas thruster packages face severe highway safety, tire friction physics, and DOT certification hurdles. Photo: Steve Jurvetson, CC BY 2.0, via Flickr / Wikimedia Commons._
 
 ## The 2026 Prototype Stunts and the "Flying Car" Rebirth
 
