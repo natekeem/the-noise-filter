@@ -12,7 +12,7 @@ tags:
   - tech-explainer
   - hardware
 description: "From earnest 2017 Reddit spec sheets to absurdist parody graphics and rocket-thruster stunts: how internet culture weaponized comparison charts against decade-long automotive vaporware."
-ogImage: "/the-noise-filter/images/tesla-roadster-comparison-memes-cover.png"
+ogImage: "images/tesla-roadster-comparison-memes-cover.png"
 coverAlt: "Editorial dark-mode automotive poster showing a sleek futuristic sports car silhouette and satirical comparison metric cards."
 quickFilter:
   changed: "Tesla showcased refreshed Roadster prototype footage with stunt maneuvers and renewed promises of SpaceX cold-gas thruster packages, reviving a decade-old internet meme cycle."

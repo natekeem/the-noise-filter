@@ -36,8 +36,9 @@ export function stripBase(pathname: string): string {
  * Does not force a trailing slash for empty paths.
  */
 export function getAssetPath(path: string): string {
+  const cleanPath = stripBase(path);
   // Strip leading slash to avoid double-slash when concatenating with baseRoot
-  const normalizedPath = path.replace(/^\/+/, "");
+  const normalizedPath = cleanPath.replace(/^\/+/, "");
 
   if (!normalizedPath) {
     return base === "" ? "/" : base;
