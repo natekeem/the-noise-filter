@@ -14,7 +14,7 @@ tags:
   - acr
 description: "Automatic content recognition can identify shows, ads, and HDMI input viewing. Here are the current Roku, Samsung, LG, and Vizio opt-out paths—and what they do not disable."
 ogImage: "images/smart-tv-acr-tracking-opt-out-cover.png"
-coverAlt: "A television screen reduced to a content fingerprint while a remote points toward a clear privacy switch."
+coverAlt: "A hand points a remote control at a television during everyday viewing."
 quickFilter:
   changed: "TV makers now describe ACR controls more explicitly, but the switch remains separate from ad personalization, voice data, app accounts, and platform analytics."
   matters: "ACR can identify content from live TV and HDMI-connected devices, so using a separate streaming box does not always put that viewing outside the TV's measurement layer."
