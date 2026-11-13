@@ -90,6 +90,9 @@ $$\text{Data Stream} = \text{Radio}_1 (5\,\text{GHz}) + \text{Radio}_2 (6\,\text
 
 However, full **MLO-STR (Simultaneous Transmit and Receive)** requires complex client antenna separation that draws significant battery power. Most mobile devices only support lower-tier **MLO-eMLSR (enhanced Multi-Link Single Radio)**, which switches bands dynamically rather than transmitting true dual-band parallel data.
 
+![Cat6 Ethernet cabling and multi-gigabit backhaul ports required to sustain Wi-Fi 7 throughput.](/the-noise-filter/images/wifi-7-vs-wifi-6e-320mhz-mlo-marketing-reality/02-ethernet-rj45-cables-backhaul.jpg)
+*Cat6 Ethernet cabling and multi-gigabit backhaul ports required to sustain Wi-Fi 7 throughput.*
+
 ---
 
 ## 5. The Decision Checklist: Should You Upgrade Today?

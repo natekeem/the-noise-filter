@@ -50,6 +50,9 @@ The board's action stemmed from two converging investigations:
 
 ## 2. Who Is Colette Kress, and Why Did the Board Pick Her?
 
+![Nvidia corporate headquarters campus in Santa Clara, California.](/the-noise-filter/images/jensen-huang-resignation-nvidia-affairs-national-security-scandal/02-nvidia-headquarters-santaclara.jpg)
+*Nvidia corporate headquarters campus in Santa Clara, California.*
+
 The appointment of **Colette Kress** as Interim CEO is an intentional move by Nvidia's board to project maximum financial stability and regulatory compliance.
 
 | Executive Metric | Jensen Huang (Departed CEO) | Colette Kress (Interim CEO) |
