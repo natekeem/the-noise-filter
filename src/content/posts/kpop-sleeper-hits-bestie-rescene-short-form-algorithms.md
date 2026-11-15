@@ -46,6 +46,8 @@ In Era 1, reversing a song required a high-definition personal video showing cha
 
 Era 3 operates on cold, platform-native math: **sound-first algorithmic saturation**. The entire song does not matter initially. Only 8 to 15 seconds of an infectious vocal hook, an exaggerated brass riff, or an unscripted moment of human personality needs to trigger repeated replays.
 
+![Four-cut authentic editorial collage documenting three eras of K-pop reverse runs: EXID in 2014, Brave Girls in 2021, BESTie in 2014/2026, and live concert fandom](/the-noise-filter/images/kpop-sleeper-hits-bestie-rescene-short-form-algorithms/03-kpop-reverse-run-eras-collage.jpg)
+
 ---
 
 ## Case 1: BESTie and the 11-Year Nostalgia Machine
@@ -53,6 +55,8 @@ Era 3 operates on cold, platform-native math: **sound-first algorithmic saturati
 When BESTie debuted *"Love Options"* in October 2013, the song was a modest success. Produced by the legendary hitmaker Brave Brothers, the track featured punchy analog horns, aggressive brass drops, and self-aware, satirical lyrics about a woman listing absurdly high dating requirements:
 
 > *"At least 180 cm tall, hilarious sense of humor, a nine-figure salary, and eyes only for me."*
+
+![BESTie performing live on stage with full vocal choreography at the Multicultural Concert in Seoul (Source: Oldlady, CC BY 4.0)](/the-noise-filter/images/kpop-sleeper-hits-bestie-rescene-short-form-algorithms/04-bestie-live-stage-nostalgia.jpg)
 
 At the time, the song competed against peak-era hits from Girls' Generation, 2NE1, and Sistar. It faded quietly into catalogue status.
 
